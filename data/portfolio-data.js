@@ -21,8 +21,7 @@ window.portfolioData = {
     email: "glezrodriguezmaria@gmail.com",
     github: "https://github.com/magonrod",
     linkedin: "https://www.linkedin.com/in/maria-gonzalez-rod/",
-    cvPath: "assets/CV.pdf",
-    invitation: "For technical enquiries, email me."
+    cvPath: "assets/CV.pdf"
   },
 
   projects: [
@@ -372,7 +371,7 @@ window.portfolioData = {
       dates: "September 2024 — February 2027",
       details: [
         "Ordinary and partial differential equations, dynamical systems, physical-system stability and bifurcation analysis with MatCont.",
-        "Multidisciplinary Design Optimization with MATLAB — highest distinction, 10/10.",
+        "Multidisciplinary Design Optimization with MATLAB: highest distinction, 10/10.",
         "COMSOL Multiphysics and numerical methods for modelling and simulation."
       ]
     },
@@ -382,7 +381,7 @@ window.portfolioData = {
       dates: "September 2018 — September 2023",
       details: [
         "Control theory, optimisation, numerical methods, flight and orbital mechanics, composite materials and engineering graphics.",
-        "Bachelor’s thesis: ORBITMiNER — grade 10/10."
+        "Bachelor’s thesis: ORBITMiNER: grade 10/10."
       ]
     }
   ],
@@ -417,7 +416,7 @@ window.portfolioData = {
       venue: "5th Symposium on Space Educational Activities",
       date: "April 2026",
       role: "Contributor",
-      status: "Poster presented · no full paper submitted",
+      status: "Poster presented",
       summary: "Contributed to the AOCS team during ESA Academy’s Concurrent Engineering Workshop by analysing torques and moments of inertia across mission phases and assessing actuator options for pointing and manoeuvrability.",
       link: "",
       linkLabel: ""
@@ -477,7 +476,7 @@ window.portfolioData = {
     },
     {
       title: "Languages",
-      items: ["Spanish · Native", "English · C1 Advanced"]
+      items: ["Spanish: Native", "English:C1 Advanced"]
     }
   ]
 
