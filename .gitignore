@@ -1,0 +1,10 @@
+# Operating-system and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local preview or generated test output
+_site/
+.test-output/
+*.log
