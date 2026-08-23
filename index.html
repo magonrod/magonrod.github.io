@@ -20,11 +20,12 @@
   <script defer src="script.js"></script>
 </head>
 <body>
+  <span id="page-top" aria-hidden="true"></span>
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <header class="site-header" id="top">
     <div class="container nav-shell">
-      <a class="brand" href="#top" aria-label="María González Rodríguez, back to top">
+      <a class="brand" href="#page-top" aria-label="María González Rodríguez, back to top">
         <span class="brand-mark" aria-hidden="true">MG</span>
         <span class="brand-text">María González Rodríguez</span>
       </a>
@@ -33,13 +34,12 @@
         <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
       </button>
       <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
-        <a href="#projects">Projects</a>
+        <a href="#projects">Work</a>
         <a href="#experience">Experience</a>
         <a href="#education">Education</a>
-        <a href="#workshops">Workshops</a>
         <a href="#research">Research Outputs</a>
+        <a href="#workshops">Workshops</a>
         <a href="#skills">Skills</a>
-        <a href="#languages">Languages</a>
         <a href="#contact">Contact</a>
         <a class="button button-small" href="assets/CV.pdf" download>Download CV</a>
       </nav>
@@ -51,13 +51,11 @@
       <div class="container hero-layout">
         <div class="hero-copy" data-reveal>
           <h1 id="hero-title">María González Rodríguez</h1>
-          <p class="hero-role"> Aerospace engineering · Industrial mathematics</p>
-          <p class="hero-statement">Aerospace Engineer and Industrial Mathematics Master’s student working on lunar environment simulation, numerical modelling and optimisation. I build and validate computational models to analyse complex engineering systems, with a particular interest in spacecraft, planetary robotics and model-based engineering.</p>
-          <p class="objective">Seeking a master’s thesis in space-sector simulation, modelling, verification and validation, optimisation or MBSE workflows.</p>
+          <p class="hero-role">Aerospace engineering · Industrial mathematics · Simulation</p>
+          <p class="hero-statement">Aerospace engineer and Industrial Mathematics Master’s student developing models, simulations and optimisation methods for space and engineering systems.</p>
           <div class="hero-actions" aria-label="Primary actions">
             <a class="button" href="#projects">View projects</a>
             <a class="button button-secondary" href="assets/CV.pdf" download>Download CV</a>
-            <a class="text-link" href="mailto:glezrodriguezmaria@gmail.com">Contact me <span aria-hidden="true">↗</span></a>
             <a class="text-link" href="https://github.com/magonrod" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
             <a class="text-link" href="https://www.linkedin.com/in/maria-gonzalez-rod/" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
           </div>
@@ -86,37 +84,30 @@
       </div>
     </section>
 
-    <section class="section section-tinted" id="workshops" aria-labelledby="workshops-title">
-      <div class="container">
-        <h2 class="section-title" id="workshops-title" data-reveal><span>04</span><span aria-hidden="true">/</span> Workshops</h2>
-        <div class="timeline compact-timeline" id="workshops-list"></div>
-      </div>
-    </section>
-
     <section class="section" id="research" aria-labelledby="research-title">
       <div class="container">
-        <h2 class="section-title" id="research-title" data-reveal><span>05</span><span aria-hidden="true">/</span> Research Outputs</h2>
+        <h2 class="section-title" id="research-title" data-reveal><span>04</span><span aria-hidden="true">/</span> Research Outputs</h2>
         <div class="publication-list" id="publication-list"></div>
       </div>
     </section>
 
-    <section class="section section-tinted" id="skills" aria-labelledby="skills-title">
+    <section class="section section-tinted" id="workshops" aria-labelledby="workshops-title">
+      <div class="container">
+        <h2 class="section-title" id="workshops-title" data-reveal><span>05</span><span aria-hidden="true">/</span> Workshops</h2>
+        <div class="timeline compact-timeline" id="workshops-list"></div>
+      </div>
+    </section>
+
+    <section class="section" id="skills" aria-labelledby="skills-title">
       <div class="container">
         <h2 class="section-title" id="skills-title" data-reveal><span>06</span><span aria-hidden="true">/</span> Skills</h2>
         <div class="skills-grid" id="skills-grid"></div>
       </div>
     </section>
 
-    <section class="section" id="languages" aria-labelledby="languages-title">
-      <div class="container">
-        <h2 class="section-title" id="languages-title" data-reveal><span>07</span><span aria-hidden="true">/</span> Languages</h2>
-        <div class="languages-list" id="languages-list"></div>
-      </div>
-    </section>
-
     <section class="section contact-section" id="contact" aria-labelledby="contact-title">
       <div class="container">
-        <h2 class="section-title" id="contact-title" data-reveal><span>08</span><span aria-hidden="true">/</span> Contact</h2>
+        <h2 class="section-title" id="contact-title" data-reveal><span>07</span><span aria-hidden="true">/</span> Contact</h2>
         <div class="contact-card" id="contact-card" data-reveal></div>
       </div>
     </section>
@@ -137,6 +128,8 @@
           <p>ESA Spaceship Poland, ISDEFE, INECO, Deloitte and Asteroid Mining Corporation Ltd.</p>
           <h3>Education</h3>
           <p>Master’s Degree in Industrial Mathematics and Bachelor’s Degree in Aerospace Engineering at Universidad Politécnica de Madrid.</p>
+          <h3>Selected additional experience</h3>
+          <p>ESA Academy Concurrent Engineering Workshop 2025, working in the AOCS team on torques, inertia and actuator options for a solar-sail mission; and Introduction to Space Mining at Universidad Politécnica de Madrid.</p>
           <p><a href="assets/CV.pdf" download>Download the full CV</a>, <a href="https://www.linkedin.com/in/maria-gonzalez-rod/">view LinkedIn</a> or <a href="mailto:glezrodriguezmaria@gmail.com">contact María by email</a>.</p>
         </div>
       </section>
@@ -146,8 +139,7 @@
   <footer class="site-footer">
     <div class="container footer-layout">
       <p>© <span id="current-year">2026</span> María González Rodríguez</p>
-      <p>Static, accessible and tracker-free.</p>
-      <a href="#top">Back to top ↑</a>
+      <a href="#page-top">Back to top ↑</a>
     </div>
   </footer>
 </body>

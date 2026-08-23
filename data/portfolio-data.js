@@ -22,19 +22,20 @@ window.portfolioData = {
     github: "https://github.com/magonrod",
     linkedin: "https://www.linkedin.com/in/maria-gonzalez-rod/",
     cvPath: "assets/CV.pdf",
-    invitation: "Open to master’s thesis opportunities worldwide involving simulation, modelling, verification and validation, optimisation or MBSE workflows for space systems."
+    invitation: "For technical enquiries, email me."
   },
 
   projects: [
     {
       id: "lunar-terrain",
+      order: 2,
       title: "Science-Parameterised Lunar Terrain Generation",
       year: "2026",
-      context: "ESA Spaceship Poland · Simulation Internship",
+      context: "ESA Spaceship Poland · Simulation Internship, completed July 2026",
       tags: ["Simulation", "Planetary Robotics", "Verification", "Unreal Engine 5"],
       visual: "terrain",
       preview: {
-        enabled: false,
+        enabled: true,
         type: "image",
         src: "assets/projects/lunar-terrain/preview.webp",
         alt: "Wide Unreal Engine view of a procedurally generated lunar terrain with craters, ejecta and rocks",
@@ -42,7 +43,7 @@ window.portfolioData = {
       },
       media: [
         {
-          enabled: false,
+          enabled: true,
           type: "video",
           src: "assets/projects/lunar-terrain/terrain-flythrough.mp4",
           poster: "assets/projects/lunar-terrain/preview.webp",
@@ -52,7 +53,7 @@ window.portfolioData = {
           layout: "wide"
         },
         {
-          enabled: false,
+          enabled: true,
           type: "image",
           src: "assets/projects/lunar-terrain/terrain-layers.webp",
           alt: "Grid comparing elevation, slope, crater and ejecta classification, and rock-density layers for the same lunar terrain",
@@ -62,7 +63,7 @@ window.portfolioData = {
           fit: "contain"
         },
         {
-          enabled: false,
+          enabled: true,
           type: "image",
           src: "assets/projects/lunar-terrain/validation-plot.webp",
           alt: "Plot comparing generated crater or rock distributions with the target distributions taken from lunar-surface literature",
@@ -72,7 +73,7 @@ window.portfolioData = {
           fit: "contain"
         },
         {
-          enabled: false,
+          enabled: true,
           type: "image",
           src: "assets/projects/lunar-terrain/workflow.webp",
           alt: "Workflow from lunar-science parameters to procedural terrain, analysis layers and rover simulation",
@@ -83,6 +84,7 @@ window.portfolioData = {
         }
       ],
       problem: "Rover perception and navigation research needs diverse lunar environments whose terrain features are traceable to planetary-science descriptions rather than purely decorative procedural generation.",
+      contribution: "Developed the procedural terrain-generation module and its co-registered analysis layers within the larger rover simulator.",
       model: "Statistical and geological descriptions of crater populations, degradation states, ejecta zones and rock-placement distributions were translated into a parameterised terrain-generation model.",
       assumptions: "Terrain morphology is generated from literature-derived statistical descriptions. The available sources do not provide final quantitative error metrics or a complete statement of all geological assumptions.",
       implementation: "Developed the terrain-generation module for an Unreal Engine 5 lunar environment simulator within a ROS 2-integrated rover simulation framework.",
@@ -91,10 +93,11 @@ window.portfolioData = {
       limitations: "Quantitative validation metrics and public software or demonstration links are not available in the supplied material.",
       tools: ["Unreal Engine 5", "ROS 2 framework", "Procedural modelling", "Literature-based validation"],
       links: [],
-      missingLinks: ["[Add demonstration link]"]
+      missingLinks: []
     },
     {
       id: "lunar-solar",
+      order: 1,
       title: "Lunar Solar Panel Placement Simulator",
       year: "2025",
       context: "Multidisciplinary Modelling and Optimisation Project",
@@ -155,6 +158,7 @@ window.portfolioData = {
         { label: "Design experiment", value: "40-point Latin hypercube sample" }
       ],
       problem: "Selecting a lunar solar-panel location is a coupled problem: annual energy depends not only on geometric sunlight, but also on terrain-cast shadows, surface temperature and the resulting change in panel efficiency.",
+      contribution: "Built a modular MATLAB simulator for lunar solar-panel placement, including shadow, thermal and efficiency models.",
       model: "A modular MATLAB simulator estimates annual output by summing hourly power from constant lunar solar irradiance, panel area, temperature-dependent efficiency and a binary illumination factor. Illumination combines solar altitude and azimuth with DEM-based terrain ray tracing.",
       assumptions: "Solar irradiance is held constant at 1,361 W/m². Surface temperature is approximated through instantaneous radiative balance, and CTJ30 panel efficiency is represented by a linear temperature coefficient. The shadow calculation uses a downsampled SLDEM2015 terrain model, a 260 km comparison radius and a lunar-curvature correction.",
       implementation: "The two design variables are panel latitude and longitude. Separate modules calculate subsolar position, solar altitude and azimuth, terrain shadowing, radiative surface temperature, panel efficiency and the final annual objective over hourly time steps.",
@@ -169,13 +173,14 @@ window.portfolioData = {
     },
     {
       id: "orbitminer",
+      order: 3,
       title: "ORBITMiNER: Near-Earth Asteroid Flyby Planning",
       year: "2023",
       context: "Bachelor’s Thesis · Grade 10/10",
       tags: ["Mission Planning", "Optimisation", "Near-Earth Asteroids", "Python"],
       visual: "orbit",
       preview: {
-        enabled: false,
+        enabled: true,
         type: "image",
         src: "assets/projects/orbitminer/preview.webp",
         alt: "Snapshot of an optimised sequence connecting moving Near-Earth asteroid targets",
@@ -183,7 +188,7 @@ window.portfolioData = {
       },
       media: [
         {
-          enabled: false,
+          enabled: true,
           type: "video",
           src: "assets/projects/orbitminer/route-animation.mp4",
           poster: "assets/projects/orbitminer/preview.webp",
@@ -193,7 +198,7 @@ window.portfolioData = {
           layout: "wide"
         },
         {
-          enabled: false,
+          enabled: true,
           type: "image",
           src: "assets/projects/orbitminer/algorithm-workflow.webp",
           alt: "Genetic algorithm workflow for evaluating and improving dynamic asteroid flyby routes",
@@ -203,7 +208,7 @@ window.portfolioData = {
           fit: "contain"
         },
         {
-          enabled: false,
+          enabled: true,
           type: "image",
           src: "assets/projects/orbitminer/convergence.webp",
           alt: "Convergence curves comparing genetic algorithm performance across heuristics or repeated runs",
@@ -213,7 +218,7 @@ window.portfolioData = {
           fit: "contain"
         },
         {
-          enabled: false,
+          enabled: true,
           type: "image",
           src: "assets/projects/orbitminer/comparison.webp",
           alt: "Comparison of final asteroid flyby routes or algorithm variants under different mission assumptions",
@@ -224,6 +229,7 @@ window.portfolioData = {
         }
       ],
       problem: "Sequencing flybys of moving Near-Earth asteroid targets is a time-dependent routing problem in which target positions and mission constraints change during the solution process.",
+      contribution: "Developed and compared genetic-algorithm strategies for dynamic asteroid-route planning in Python.",
       model: "Modelled the mission-planning task as a dynamic travelling-salesman-type problem with moving targets representing asteroid flybys.",
       assumptions: "The available source material confirms moving targets, alternative heuristics and mission-design assumptions, but does not provide the complete constraint set or benchmark definitions.",
       implementation: "Developed genetic-algorithm strategies in Python and compared heuristic choices, constraints and mission-design assumptions.",
@@ -232,17 +238,18 @@ window.portfolioData = {
       limitations: "Benchmark cases, convergence evidence and the final mission-planning result still need to be added from the thesis.",
       tools: ["Python", "Genetic algorithms", "Dynamic routing", "Mission planning"],
       links: [],
-      missingLinks: ["[Add thesis link]", "[Add repository link]", "[Add animation or result plot]"]
+      missingLinks: []
     },
     {
       id: "rpm",
+      order: 4,
       title: "Random Positioning Machine for Microgravity Simulation",
       year: "2022",
       context: "Research Project · Presented at the 73rd IAC",
       tags: ["Microgravity", "Dynamical Simulation", "Verification", "Rotational Motion"],
       visual: "rotation",
       preview: {
-        enabled: false,
+        enabled: true,
         type: "image",
         src: "assets/projects/rpm/preview.webp",
         alt: "Photograph, CAD view or schematic of the random positioning machine with its rotation axes marked",
@@ -250,7 +257,7 @@ window.portfolioData = {
       },
       media: [
         {
-          enabled: false,
+          enabled: true,
           type: "video",
           src: "assets/projects/rpm/rotation-demo.mp4",
           poster: "assets/projects/rpm/preview.webp",
@@ -260,7 +267,7 @@ window.portfolioData = {
           layout: "wide"
         },
         {
-          enabled: false,
+          enabled: true,
           type: "image",
           src: "assets/projects/rpm/gravity-vector.webp",
           alt: "Three-dimensional trace or spherical coverage plot of the simulated gravity vector",
@@ -270,7 +277,7 @@ window.portfolioData = {
           fit: "contain"
         },
         {
-          enabled: false,
+          enabled: true,
           type: "image",
           src: "assets/projects/rpm/residual-acceleration.webp",
           alt: "Residual acceleration plotted over time or as a distribution for the random positioning machine",
@@ -280,7 +287,7 @@ window.portfolioData = {
           fit: "contain"
         },
         {
-          enabled: false,
+          enabled: true,
           type: "image",
           src: "assets/projects/rpm/algorithm-comparison.webp",
           alt: "Comparison of rotational algorithms using residual acceleration or gravity-vector uniformity metrics",
@@ -291,6 +298,7 @@ window.portfolioData = {
         }
       ],
       problem: "Random positioning machines approximate microgravity through controlled rotational motion, but residual acceleration and gravity-vector behaviour determine how faithfully the environment is reproduced.",
+      contribution: "Designed and analysed rotational algorithms as part of the collaborative random positioning machine project.",
       model: "Represented rotational patterns and the resulting gravity-vector evolution to assess simulated microgravity and partial-gravity conditions.",
       assumptions: "The supplied sources confirm the evaluation criteria but do not provide the full hardware setup, implementation details or numerical thresholds.",
       implementation: "Designed and analysed rotational algorithms as part of an improved random positioning machine concept.",
@@ -299,7 +307,7 @@ window.portfolioData = {
       limitations: "Implementation tools, experimental setup and quantitative validation results still need to be added.",
       tools: ["Rotational-motion analysis", "Microgravity simulation", "Residual-acceleration evaluation"],
       links: [],
-      missingLinks: ["[Add video or technical diagram]"]
+      missingLinks: []
     }
   ],
 
@@ -308,11 +316,11 @@ window.portfolioData = {
       role: "Simulation Intern",
       organisation: "ESA Spaceship Poland",
       location: "Poznań, Poland",
-      dates: "February 2026 — Present",
+      dates: "February 2026 — July 2026",
       points: [
-        "Develop a science-parameterised terrain-generation module for an Unreal Engine 5 lunar environment simulator in a ROS 2-integrated rover simulation framework.",
-        "Model crater populations, degradation states, ejecta zones and rock placement from statistical and geological lunar-surface descriptions.",
-        "Generate co-registered analysis layers and compare outputs with lunar-surface literature."
+        "Developed a science-parameterised terrain-generation module for an Unreal Engine 5 lunar environment simulator in a ROS 2-integrated rover simulation framework.",
+        "Modelled crater populations, degradation states, ejecta zones and rock placement from statistical and geological lunar-surface descriptions.",
+        "Generated co-registered analysis layers and compared outputs with lunar-surface literature."
       ]
     },
     {
@@ -405,19 +413,29 @@ window.portfolioData = {
 
   publications: [
     {
+      title: "JAMS: Jupiter Analyzer of Magnetosphere with Solar Sailing",
+      venue: "5th Symposium on Space Educational Activities",
+      date: "April 2026",
+      role: "Contributor",
+      status: "Poster presented · no full paper submitted",
+      summary: "Contributed to the AOCS team during ESA Academy’s Concurrent Engineering Workshop by analysing torques and moments of inertia across mission phases and assessing actuator options for pointing and manoeuvrability.",
+      link: "",
+      linkLabel: ""
+    },
+    {
       title: "Scientifically Grounded Lunar Terrain Generation for High-Fidelity Rover Perception and Navigation Simulation",
       venue: "i-SAIRAS/iSpaRo 2026",
-      year: "2026",
+      date: "November 2026",
       role: "Co-author",
-      status: "Manuscript submitted · decision pending",
+      status: "Selected for presentation",
       summary: "Contributed the terrain-generation module, including crater, ejecta and rock-placement modelling, co-registered analysis layers and comparison with lunar-surface literature.",
       link: "",
       linkLabel: ""
     },
     {
       title: "Development of an Improved Random Positioning Machine to Simulate Organic Growth in Microgravity",
-      venue: "73rd International Astronautical Congress",
-      year: "2022",
+      venue: "73rd International Astronautical Congress (IAC)",
+      date: "September 2022",
       role: "Co-author",
       status: "Conference contribution presented at IAC",
       summary: "Co-authored work on rotational-pattern design for microgravity simulation, focused on residual acceleration and simulation fidelity.",
@@ -426,8 +444,8 @@ window.portfolioData = {
     },
     {
       title: "Literature Studies and Experimental Characterization of Multiple Solid Propellant Regression Rates Using Crawford Bomb Method",
-      venue: "71st International Astronautical Congress",
-      year: "2020",
+      venue: "71st International Astronautical Congress (IAC)",
+      date: "October 2020",
       role: "Co-author",
       status: "Published conference paper",
       summary: "Contributed to experimental characterisation of solid-propellant mixtures through Crawford bomb measurements.",
@@ -438,45 +456,29 @@ window.portfolioData = {
 
   skills: [
     {
-      title: "Modelling & Simulation",
-      items: ["COMSOL Multiphysics", "Unreal Engine 5", "Simulink", "Physical-system modelling", "Procedural lunar terrain", "OUNPPM", "NAVTOOLS"]
+      title: "Modelling",
+      items: ["MATLAB", "COMSOL Multiphysics", "Simulink", "Unreal Engine 5", "ROS 2", "MatCont"]
     },
     {
-      title: "Numerical & Mathematical Methods",
-      items: ["Ordinary and partial differential equations", "Dynamical systems", "Stability and bifurcation analysis", "Multidisciplinary design optimisation", "Genetic algorithms", "Sensitivity analysis", "Reduced-order modelling"]
+      title: "Optimisation",
+      items: ["Multidisciplinary design optimisation", "Genetic algorithms", "Latin hypercube sampling", "Sensitivity analysis", "Pearson correlation"]
     },
     {
-      title: "Programming & Scientific Computing",
-      items: ["MATLAB", "Python", "Fortran", "LaTeX"]
+      title: "Programming",
+      items: ["Python", "Fortran", "LaTeX"]
     },
     {
-      title: "Aerospace & Systems Engineering",
-      items: ["Orbital mechanics", "Flight mechanics", "Automatic control", "AOCS sizing", "Mission analysis", "Concurrent engineering", "CDP4-COMET"]
+      title: "Aerospace",
+      items: ["Orbital mechanics", "Flight mechanics", "Automatic control", "AOCS sizing", "Mission analysis", "CDP4-COMET"]
     },
     {
-      title: "Verification & Analysis",
-      items: ["Requirements review", "Verification and validation", "Test-plan review", "Model-assumption analysis", "Literature-based comparison", "Trade-off analysis", "Technical documentation"]
+      title: "Verification",
+      items: ["JPL ephemerides", "DEM ray tracing", "Literature comparison", "Requirements review", "Test-plan review", "OUNPPM", "NAVTOOLS"]
     },
     {
-      title: "Engineering Tools",
-      items: ["CATIA V5", "AutoCAD", "SolidWorks", "ESAComp", "MatCont", "Microsoft Office"]
+      title: "Languages",
+      items: ["Spanish · Native", "English · C1 Advanced"]
     }
-  ],
-
-  languages: [
-    {
-      language: "Spanish",
-      level: "Native"
-    },
-    {
-      language: "English",
-      level: "C1 Advanced"
-    }
-  ],
-
-  placeholders: [
-    "Add project images, videos, plots and diagrams under assets/projects/.",
-    "Add thesis, report and demonstration links where marked.",
-    "Add quantitative project results only when supported by reports or project evidence."
   ]
+
 };

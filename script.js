@@ -22,7 +22,7 @@
   function renderProjectPreview(project) {
     const preview = project.preview;
     if (!mediaIsEnabled(preview)) {
-      return `<div class="project-visual visual-${escapeHTML(project.visual || 'systems')}" aria-hidden="true"></div>`;
+      return '<div class="project-no-preview">Technical media unavailable</div>';
     }
 
     const label = preview.label
@@ -135,6 +135,53 @@
     return links || missing ? `<div class="project-link-row">${links}${missing}</div>` : '';
   }
 
+  const projectDetailBlock = (label, content) => `
+    <div class="project-detail-block">
+      <h4>${escapeHTML(label)}</h4>
+      <p>${escapeHTML(content)}</p>
+    </div>`;
+
+  function renderProjectDetails(project) {
+    let blocks;
+
+    switch (project.id) {
+      case 'lunar-solar':
+        blocks = [
+          ['Model', project.model],
+          ['Validation', project.validation],
+          ['Evidence', project.result],
+          ['Limits', project.limitations]
+        ];
+        break;
+      case 'lunar-terrain':
+        blocks = [
+          ['My contribution', project.contribution],
+          ['Technical focus', project.model],
+          ['Outputs', `${project.validation} ${project.result}`]
+        ];
+        break;
+      case 'orbitminer':
+        blocks = [
+          ['Routing problem', project.problem],
+          ['Optimisation approach', project.model],
+          ['Benchmarking and reformulation', `${project.validation} ${project.assumptions}`],
+          ['Evidence', project.result]
+        ];
+        break;
+      case 'rpm':
+        blocks = [
+          ['My contribution', project.contribution],
+          ['Trajectory algorithms', project.model],
+          ['Evaluation', `${project.validation} ${project.result}`]
+        ];
+        break;
+      default:
+        blocks = [['Overview', project.problem]];
+    }
+
+    return `<div class="project-detail-grid">${blocks.map(([label, content]) => projectDetailBlock(label, content)).join('')}</div>`;
+  }
+
   function projectTemplate(project) {
     return `
       <details class="project-card" data-reveal>
@@ -144,6 +191,8 @@
             <p class="project-kicker">${escapeHTML(project.year)} · ${escapeHTML(project.context)}</p>
             <h3 class="project-heading">${escapeHTML(project.title)}</h3>
             <p class="project-context">${escapeHTML(project.problem)}</p>
+            <p class="project-contribution"><strong>My contribution:</strong> ${escapeHTML(project.contribution || project.implementation)}</p>
+            <p class="project-result"><strong>Evidence:</strong> ${escapeHTML(project.result)}</p>
             <ul class="project-tags" aria-label="Project topics">${renderList(project.tags)}</ul>
           </div>
           <span class="project-toggle" aria-hidden="true">+</span>
@@ -151,16 +200,7 @@
         <div class="project-detail">
           ${renderProjectMedia(project)}
           ${renderProjectSupplement(project)}
-          <div class="case-grid">
-            <div class="case-item"><h4>Engineering problem</h4><p>${escapeHTML(project.problem)}</p></div>
-            <div class="case-item"><h4>Model or method</h4><p>${escapeHTML(project.model)}</p></div>
-            <div class="case-item"><h4>Assumptions & constraints</h4><p>${escapeHTML(project.assumptions)}</p></div>
-            <div class="case-item"><h4>Implementation</h4><p>${escapeHTML(project.implementation)}</p></div>
-            <div class="case-item"><h4>Verification / validation</h4><p>${escapeHTML(project.validation)}</p></div>
-            <div class="case-item"><h4>Result or insight</h4><p>${escapeHTML(project.result)}</p></div>
-            <div class="case-item limitations"><h4>Limitations</h4><p>${escapeHTML(project.limitations)}</p></div>
-          </div>
-          <ul class="tag-list" aria-label="Tools and methods">${renderList(project.tools)}</ul>
+          ${renderProjectDetails(project)}
           ${renderProjectLinks(project)}
         </div>
       </details>`;
@@ -168,7 +208,10 @@
 
   function renderProjects() {
     const container = document.getElementById('projects-grid');
-    if (container) container.innerHTML = data.projects.map(projectTemplate).join('');
+    if (container) {
+      const projects = data.projects.slice().sort((first, second) => (first.order || 99) - (second.order || 99));
+      container.innerHTML = projects.map(projectTemplate).join('');
+    }
   }
 
   function renderTimeline(containerId, entries, titleKey = 'role') {
@@ -211,7 +254,12 @@
             <h3>${escapeHTML(item.title)}</h3>
             <p>${escapeHTML(item.summary)}</p>
           </div>
-          <p class="publication-meta">${escapeHTML(item.venue)}<br>${escapeHTML(item.year)} · ${escapeHTML(item.role)}${link ? `<br>${link}` : ''}</p>
+          <p class="publication-meta">
+            <span>${escapeHTML(item.venue)}</span>
+            <span>${escapeHTML(item.date || item.year || '')}</span>
+            <span>${escapeHTML(item.role)}</span>
+            ${link ? `<span>${link}</span>` : ''}
+          </p>
         </article>`;
     }).join('');
   }
@@ -223,16 +271,6 @@
       <article class="skill-group" data-reveal>
         <h3>${escapeHTML(group.title)}</h3>
         <ul>${renderList(group.items)}</ul>
-      </article>`).join('');
-  }
-
-  function renderLanguages() {
-    const container = document.getElementById('languages-list');
-    if (!container) return;
-    container.innerHTML = data.languages.map((item) => `
-      <article class="language-item" data-reveal>
-        <h3>${escapeHTML(item.language)}</h3>
-        <p>${escapeHTML(item.level)}</p>
       </article>`).join('');
   }
 
@@ -248,53 +286,26 @@
           <div><dt>GitHub</dt><dd><a href="${escapeHTML(person.github)}" target="_blank" rel="noreferrer">github.com/magonrod <span class="sr-only">(opens in a new tab)</span></a></dd></div>
           <div><dt>LinkedIn</dt><dd><a href="${escapeHTML(person.linkedin)}" target="_blank" rel="noreferrer">linkedin.com/in/maria-gonzalez-rod <span class="sr-only">(opens in a new tab)</span></a></dd></div>
         </dl>
+        <a class="button button-light" href="mailto:${escapeHTML(person.email)}">Email me</a>
         <a class="button button-light" href="${escapeHTML(person.cvPath)}" download>Download CV</a>
       </div>
-      <form class="contact-form" id="contact-form" action="mailto:${escapeHTML(person.email)}" method="post" enctype="text/plain">
-        <div class="form-row">
-          <label for="contact-name">Name</label>
-          <input id="contact-name" name="name" type="text" autocomplete="name" required>
-        </div>
-        <div class="form-row">
-          <label for="contact-email">Email</label>
-          <input id="contact-email" name="email" type="email" autocomplete="email" required>
-        </div>
-        <div class="form-row">
-          <label for="contact-subject">Subject</label>
-          <input id="contact-subject" name="subject" type="text" value="Master’s thesis opportunity" required>
-        </div>
-        <div class="form-row">
-          <label for="contact-message">Message</label>
-          <textarea id="contact-message" name="message" rows="6" required></textarea>
-        </div>
-        <button class="button button-light" type="submit">Send message</button>
-        <p class="form-note" id="contact-form-status">This opens your email application. The website does not store your message.</p>
-      </form>`;
-  }
-
-  function setupContactForm() {
-    const form = document.getElementById('contact-form');
-    if (!form) return;
-
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
-      const formData = new FormData(form);
-      const name = String(formData.get('name') || '').trim();
-      const senderEmail = String(formData.get('email') || '').trim();
-      const subject = String(formData.get('subject') || 'Portfolio enquiry').trim();
-      const message = String(formData.get('message') || '').trim();
-      const body = `Name: ${name}\nEmail: ${senderEmail}\n\n${message}`;
-      const mailto = `mailto:${data.person.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      const status = document.getElementById('contact-form-status');
-      if (status) status.textContent = 'Opening your email application…';
-      window.location.href = mailto;
-    });
+      `;
   }
 
   function setupNavigation() {
     const toggle = document.querySelector('.nav-toggle');
     const nav = document.getElementById('site-nav');
+    const brand = document.querySelector('.brand');
     if (!toggle || !nav) return;
+
+    if (brand) {
+      brand.addEventListener('click', (event) => {
+        event.preventDefault();
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+        history.replaceState(null, '', '#page-top');
+      });
+    }
 
     const closeNav = () => {
       nav.classList.remove('is-open');
@@ -363,9 +374,7 @@
   renderTimeline('workshops-list', data.workshops, 'title');
   renderPublications();
   renderSkills();
-  renderLanguages();
   renderContact();
-  setupContactForm();
   setupNavigation();
   setStructuredData();
 

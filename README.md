@@ -57,7 +57,6 @@ It stores:
 - projects
 - experience
 - education
-- workshops
 - publications
 - skills
 - languages
@@ -101,7 +100,7 @@ A complete, project-by-project shot list is available in:
 assets/projects/README.md
 ```
 
-Each planned media item is already defined in `data/portfolio-data.js` with `enabled: false`. To add it:
+Media items are defined in `data/portfolio-data.js`. To add a new item:
 
 1. Put the file at the specified path.
 2. Change the matching item to `enabled: true`.
@@ -180,13 +179,9 @@ https://magonrod.github.io/
 - relative internal paths
 - no trackers, cookies, external fonts or third-party runtime dependencies
 
-## Remaining placeholders
+## Remaining additions
 
-Search for `[Add` to find incomplete information. The main remaining items are:
-
-- project images, videos, plots and diagrams
-- project thesis, report, publication and demonstration links
-- quantitative project results and validation metrics supported by project evidence
+The public site now uses the project media available in the repository. Remaining improvements are limited to adding public thesis or demonstration links and adding quantitative results to projects when supported by project evidence.
 
 ## Publishing checklist
 
