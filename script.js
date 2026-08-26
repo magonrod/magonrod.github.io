@@ -73,6 +73,7 @@
 
     const items = enabledMedia.map((item) => {
       const wideClass = item.layout === 'wide' ? ' project-media--wide' : '';
+      const sizeClass = item.size === 'compact' ? ' project-media--compact' : '';
       const fitClass = item.fit === 'contain' ? ' is-contain' : '';
       const naturalClass = item.aspect === 'natural' ? ' is-natural' : '';
       const caption = renderMediaCaption(item);
@@ -80,23 +81,23 @@
       if (item.type === 'video') {
         const poster = item.poster ? ` poster="${escapeHTML(item.poster)}"` : '';
         return `
-          <figure class="project-media${wideClass}">
+          <figure class="project-media${wideClass}${sizeClass}">
+            ${caption}
             <div class="project-media-frame${naturalClass}">
               <video class="${fitClass.trim()}" controls playsinline preload="metadata"${poster} aria-label="${escapeHTML(item.title || item.caption || `${project.title} video`)}">
                 <source src="${escapeHTML(item.src)}" type="${escapeHTML(item.mimeType || 'video/mp4')}">
                 Your browser does not support embedded video.
               </video>
             </div>
-            ${caption}
           </figure>`;
       }
 
       return `
-        <figure class="project-media${wideClass}">
+        <figure class="project-media${wideClass}${sizeClass}">
+          ${caption}
           <a class="project-media-frame${naturalClass}" href="${escapeHTML(item.src)}" target="_blank" rel="noreferrer" aria-label="Open full-size image: ${escapeHTML(item.title || item.alt || project.title)}">
             <img class="${fitClass.trim()}" src="${escapeHTML(item.src)}" alt="${escapeHTML(item.alt || '')}" loading="lazy" decoding="async">
           </a>
-          ${caption}
         </figure>`;
     }).join('');
 
@@ -154,11 +155,7 @@
         ];
         break;
       case 'lunar-terrain':
-        blocks = [
-          ['My contribution', project.contribution],
-          ['Technical focus', project.model],
-          ['Outputs', `${project.validation} ${project.result}`]
-        ];
+        blocks = [];
         break;
       case 'orbitminer':
         blocks = [
@@ -169,17 +166,15 @@
         ];
         break;
       case 'rpm':
-        blocks = [
-          ['My contribution', project.contribution],
-          ['Trajectory algorithms', project.model],
-          ['Evaluation', `${project.validation} ${project.result}`]
-        ];
+        blocks = [];
         break;
       default:
         blocks = [['Overview', project.problem]];
     }
 
-    return `<div class="project-detail-grid">${blocks.map(([label, content]) => projectDetailBlock(label, content)).join('')}</div>`;
+    return blocks.length
+      ? `<div class="project-detail-grid">${blocks.map(([label, content]) => projectDetailBlock(label, content)).join('')}</div>`
+      : '';
   }
 
   function projectTemplate(project) {
@@ -190,9 +185,8 @@
           <div class="project-summary-copy">
             <p class="project-kicker">${escapeHTML(project.year)} · ${escapeHTML(project.context)}</p>
             <h3 class="project-heading">${escapeHTML(project.title)}</h3>
-            <p class="project-context">${escapeHTML(project.problem)}</p>
+            <p class="project-context">${escapeHTML(project.summary || project.problem)}</p>
             <p class="project-contribution"><strong>My contribution:</strong> ${escapeHTML(project.contribution || project.implementation)}</p>
-            <p class="project-result"><strong>Evidence:</strong> ${escapeHTML(project.result)}</p>
             <ul class="project-tags" aria-label="Project topics">${renderList(project.tags)}</ul>
           </div>
           <span class="project-toggle" aria-hidden="true">+</span>

@@ -24,20 +24,20 @@ Recommended formats:
 
 Folder: `assets/projects/lunar-terrain/`
 
-### `preview.webp`
-A clean, wide Unreal Engine view of one generated lunar environment. It should immediately show the terrain scale, crater morphology, ejecta regions and rock placement. Avoid UI panels unless they help identify the simulator.
+### `header.webp`
+A static, wide view of generated lunar terrain with the rover. This is the project-card header and should show the terrain clearly without excessive overlay text.
 
-### `terrain-flythrough.mp4`
-A 10–15 second camera or rover-level fly-through. Use slow, stable movement so a reviewer can inspect the terrain rather than watching a cinematic trailer.
+### `terrain-configurations.gif`
+A GIF showing four different generated lunar terrain configurations. It should communicate the configurable terrain-generation pipeline early in the expanded project.
 
-### `terrain-layers.webp`
-A four-panel image showing the same terrain as elevation, slope, crater/ejecta classification and rock-density layers. Use identical extents and clear labels to demonstrate that the layers are co-registered.
+### `dataset_preview.gif`
+A four-panel preview showing left stereo, greyscale depth, segmentation and right stereo. This demonstrates application of the generated terrain within the broader LunarSim-PG system.
 
-### `validation-plot.webp`
-A plot comparing generated crater-size or rock-density statistics with the target distribution taken from the lunar-surface literature. This is the strongest validation visual for the project.
+### `05_heightmap_overview.png`
+A large technical figure showing elevation, hillshade, slope, local elevation roughness, terrain profiles and summary terrain statistics. Preserve the labels and full figure when exporting.
 
-### `workflow.webp`
-A compact diagram: literature-derived parameters → procedural generator → terrain and analysis layers → rover simulation / synthetic sensors.
+### `03_rocks_grouped_by_source_crater.png`
+A large technical figure showing coloured rock groups associated with source craters, alongside independently distributed background rocks where applicable. Preserve the labels and full figure when exporting.
 
 ## 2. Lunar solar-panel placement simulator
 
@@ -84,6 +84,8 @@ A photograph, CAD view or schematic of the machine with the two rotation axes cl
 
 ### `rotation-demo.mp4`
 A short video of the physical machine or an animation of the two-axis motion. The movement should be slow enough to understand how sample orientation changes.
+
+The RPM case study uses `Video_3_two_axis_three_axis_sphere_trajectories(6).avi` and `Video_5_spheres_with_acceleration_time_cursor(4).avi`. If the AVI is not playable in a target browser, convert it to H.264 MP4 or WebM while retaining the same motion and acceleration comparisons.
 
 ### `gravity-vector.webp`
 A 3D trace or spherical coverage plot showing how the effective gravity direction is distributed over time.

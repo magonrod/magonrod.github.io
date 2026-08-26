@@ -28,69 +28,87 @@ window.portfolioData = {
     {
       id: "lunar-terrain",
       order: 2,
-      title: "Science-Parameterised Lunar Terrain Generation",
+      title: "Scientifically Grounded Lunar Terrain Generation for High-Fidelity Rover Perception and Navigation Simulation",
       year: "2026",
       context: "ESA Spaceship Poland · Simulation Internship, completed July 2026",
-      tags: ["Simulation", "Planetary Robotics", "Verification", "Unreal Engine 5"],
+      tags: ["Procedural Generation", "Planetary Robotics", "Terrain Modelling", "Simulation"],
       visual: "terrain",
       preview: {
         enabled: true,
         type: "image",
-        src: "assets/projects/lunar-terrain/preview.webp",
+        src: "assets/projects/lunar-terrain/header.png",
         alt: "Wide Unreal Engine view of a procedurally generated lunar terrain with craters, ejecta and rocks",
-        label: "Lunar terrain simulation"
+        fit: "cover"
       },
       media: [
         {
           enabled: true,
-          type: "video",
-          src: "assets/projects/lunar-terrain/terrain-flythrough.mp4",
-          poster: "assets/projects/lunar-terrain/preview.webp",
-          role: "Simulation demo",
-          title: "Generated terrain fly-through",
-          caption: "A 10–15 second camera or rover-level fly-through showing terrain scale, crater morphology, ejecta regions and rock placement.",
+          type: "image",
+          src: "assets/projects/lunar-terrain/four_terrain_preset.gif",
+          alt: "Four generated lunar terrain configurations shown side by side",
+          role: "Configurable generation",
+          //title: "Four terrain configurations",
+          caption: "Regional profiles control crater populations and morphology, degradation, terrain characteristics, rock abundance and placement, allowing one generator to produce distinct terrain families.",
           layout: "wide"
         },
         {
           enabled: true,
           type: "image",
-          src: "assets/projects/lunar-terrain/terrain-layers.webp",
-          alt: "Grid comparing elevation, slope, crater and ejecta classification, and rock-density layers for the same lunar terrain",
-          role: "Model outputs",
-          title: "Co-registered terrain layers",
-          caption: "A four-panel image showing elevation, slope, crater/ejecta classification and rock-density layers for the same generated terrain.",
-          fit: "contain"
+          src: "assets/projects/lunar-terrain/dataset_preview.gif",
+          alt: "Lunar rover simulation dataset preview showing left stereo, greyscale depth, segmentation and right stereo",
+          role: "System application",
+          // title: "From terrain to rover simulation",
+          caption: "This preview shows the generated terrain applied within the broader LunarSim-PG system, where scenes can support perception, navigation and synthetic-data experiments.",
+          layout: "wide"
         },
         {
           enabled: true,
           type: "image",
-          src: "assets/projects/lunar-terrain/validation-plot.webp",
-          alt: "Plot comparing generated crater or rock distributions with the target distributions taken from lunar-surface literature",
-          role: "Validation",
-          title: "Distribution check against literature",
-          caption: "A plot comparing generated crater-size or rock-density statistics with the target distributions used to parameterise the model.",
-          fit: "contain"
+          src: "assets/projects/lunar-terrain/Captura.PNG",
+          alt: "Overview of the LunarSim-PG pipeline from regional configuration files through terrain generation, rendering, simulation and dataset generation",
+          role: "LunarSim-PG pipeline overview",
+          //title: "LunarSim-PG pipeline overview",
+          caption: "The broader pipeline connects regional configuration files with procedural terrain generation, Unreal Engine rendering, simulation runtime, ROS 2 integration and synchronized ground-truth-rich dataset generation.",
+          layout: "wide",
+          fit: "contain",
+          aspect: "natural"
         },
         {
           enabled: true,
           type: "image",
-          src: "assets/projects/lunar-terrain/workflow.webp",
-          alt: "Workflow from lunar-science parameters to procedural terrain, analysis layers and rover simulation",
-          role: "Method",
-          title: "Terrain-generation workflow",
-          caption: "A compact diagram linking literature-derived parameters to procedural generation, analysis layers and the rover simulation framework.",
-          fit: "contain"
+          src: "assets/projects/lunar-terrain/05_heightmap_overview.png",
+          alt: "Heightmap overview showing elevation, hillshade, slope, local elevation roughness, terrain profiles and summary terrain statistics",
+          role: "Quantitative terrain products",
+          //title: "Terrain as simulation data",
+          caption: "The generator produces inspectable geometry and derived descriptors, including elevation, hillshade, slope, local roughness, profiles and summary statistics, rather than only a visual surface.",
+          layout: "wide",
+          fit: "contain",
+          aspect: "natural"
+        },
+        {
+          enabled: true,
+          type: "image",
+          src: "assets/projects/lunar-terrain/03_rocks_grouped_by_source_crater.png",
+          alt: "Rocks grouped by their source crater across a generated lunar terrain",
+          role: "Crater-coupled rock generation",
+          //title: "Rocks grouped by source crater",
+          caption: "Coloured groups identify rocks associated with source craters. Rim, ejecta and degradation-dependent distributions couple rock placement to crater structure, while background rocks can remain independent.",
+          layout: "wide",
+          fit: "contain",
+          aspect: "natural",
+          size: "compact"
         }
       ],
-      problem: "Rover perception and navigation research needs diverse lunar environments whose terrain features are traceable to planetary-science descriptions rather than purely decorative procedural generation.",
-      contribution: "Developed the procedural terrain-generation module and its co-registered analysis layers within the larger rover simulator.",
+      summary: "Lunar rover perception and navigation need simulation environments that are both realistic and controllable. Existing planetary simulators often offer high visual fidelity but limited accessibility, while open robotics simulators tend to rely on more generic terrain generation.",
+      problem: "Lunar rover perception and navigation need simulation environments that are both realistic and controllable. Existing planetary simulators often offer high visual fidelity but limited accessibility, while open robotics simulators tend to rely on more generic terrain generation.",
+      contribution: "I developed the procedural terrain-generation pipeline, using lunar surface characteristics to define configurable regional profiles controlling crater populations, morphology, degradation and terrain-dependent rock distributions for perception and navigation experiments",
       model: "Statistical and geological descriptions of crater populations, degradation states, ejecta zones and rock-placement distributions were translated into a parameterised terrain-generation model.",
       assumptions: "Terrain morphology is generated from literature-derived statistical descriptions. The available sources do not provide final quantitative error metrics or a complete statement of all geological assumptions.",
       implementation: "Developed the terrain-generation module for an Unreal Engine 5 lunar environment simulator within a ROS 2-integrated rover simulation framework.",
       validation: "Generated co-registered elevation, slope, crater/ejecta classification and spatial-density layers, then checked outputs against lunar-surface literature.",
       result: "Delivered scientifically grounded terrain and analysis layers intended to support perception, navigation, synthetic sensor-data generation and future sim-to-real workflows.",
       limitations: "Quantitative validation metrics and public software or demonstration links are not available in the supplied material.",
-      tools: ["Unreal Engine 5", "ROS 2 framework", "Procedural modelling", "Literature-based validation"],
+      tools: ["Procedural modelling", "Scientific parameterisation", "Terrain analysis", "LunarSim-PG collaboration"],
       links: [],
       missingLinks: []
     },
@@ -108,7 +126,7 @@ window.portfolioData = {
         src: "assets/projects/lunar-solar/LunarX_C.gif",
         alt: "Binary illumination map for a Lunar X terrain region, with illuminated areas in white and terrain shadows in black",
         label: "Actual simulator output",
-        fit: "contain"
+        fit: "cover"
       },
       media: [
         {
@@ -244,7 +262,7 @@ window.portfolioData = {
       order: 4,
       title: "Random Positioning Machine for Microgravity Simulation",
       year: "2022",
-      context: "Research Project · Presented at the 73rd IAC",
+      context: "Collaborative research project",
       tags: ["Microgravity", "Dynamical Simulation", "Verification", "Rotational Motion"],
       visual: "rotation",
       preview: {
@@ -258,46 +276,29 @@ window.portfolioData = {
         {
           enabled: true,
           type: "video",
-          src: "assets/projects/rpm/rotation-demo.mp4",
+          src: "assets/projects/rpm/Video_3_two_axis_three_axis_sphere_trajectories(6).mp4",
           poster: "assets/projects/rpm/preview.webp",
-          role: "System demo",
-          title: "Rotational-motion demonstration",
-          caption: "A short video or animation showing the two-axis motion and how the sample orientation changes during operation.",
+          mimeType: "video/mp4",
+          role: "Trajectory comparison",
+          title: "Two-axis and three-axis trajectories",
+          caption: "The generated trajectories show how the two configurations change sample orientation and cover the gravity direction over time.",
+          layout: "wide",
+          fit: "contain"
+        },
+        {
+          enabled: true,
+          type: "video",
+          src: "assets/projects/rpm/Video_5_spheres_with_acceleration_time_cursor(4).mp4",
+          poster: "assets/projects/rpm/preview.webp",
+          mimeType: "video/mp4",
+          role: "Acceleration environment",
+          title: "Acceleration over time",
+          caption: "The time cursor connects the changing trajectory to the acceleration environment experienced at a representative point, showing how the motion strategy affects residual acceleration.",
           layout: "wide"
-        },
-        {
-          enabled: true,
-          type: "image",
-          src: "assets/projects/rpm/gravity-vector.webp",
-          alt: "Three-dimensional trace or spherical coverage plot of the simulated gravity vector",
-          role: "Model output",
-          title: "Gravity-vector coverage",
-          caption: "A 3D trace or spherical coverage plot showing how the effective gravity direction is distributed over time.",
-          fit: "contain"
-        },
-        {
-          enabled: true,
-          type: "image",
-          src: "assets/projects/rpm/residual-acceleration.webp",
-          alt: "Residual acceleration plotted over time or as a distribution for the random positioning machine",
-          role: "Validation",
-          title: "Residual-acceleration assessment",
-          caption: "A time history, histogram or summary metric used to evaluate the fidelity of the simulated microgravity environment.",
-          fit: "contain"
-        },
-        {
-          enabled: true,
-          type: "image",
-          src: "assets/projects/rpm/algorithm-comparison.webp",
-          alt: "Comparison of rotational algorithms using residual acceleration or gravity-vector uniformity metrics",
-          role: "Results",
-          title: "Rotational-pattern comparison",
-          caption: "A comparison of candidate rotational algorithms using the same fidelity metrics, highlighting the strongest and weakest behaviours.",
-          fit: "contain"
         }
       ],
-      problem: "Random positioning machines approximate microgravity through controlled rotational motion, but residual acceleration and gravity-vector behaviour determine how faithfully the environment is reproduced.",
-      contribution: "Designed and analysed rotational algorithms as part of the collaborative random positioning machine project.",
+      problem: "Random Positioning Machines simulate microgravity by continuously changing a sample’s orientation relative to Earth’s gravity. The motion strategy therefore affects the residual accelerations experienced by the sample and how well the desired gravity environment is reproduced.",
+      contribution: "Developed and analysed the motion algorithms used to generate rotational trajectories, including the ongoing comparison of two-axis and three-axis configurations and their resulting acceleration environments.",
       model: "Represented rotational patterns and the resulting gravity-vector evolution to assess simulated microgravity and partial-gravity conditions.",
       assumptions: "The supplied sources confirm the evaluation criteria but do not provide the full hardware setup, implementation details or numerical thresholds.",
       implementation: "Designed and analysed rotational algorithms as part of an improved random positioning machine concept.",
