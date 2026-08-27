@@ -3,8 +3,16 @@
 Thumbs.db
 .vscode/
 .idea/
+.venv/
+venv/
+node_modules/
+__pycache__/
+.pytest_cache/
+.cache/
 
 # Local preview or generated test output
 _site/
 .test-output/
 *.log
+*.tmp
+*.bak

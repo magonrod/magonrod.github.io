@@ -130,7 +130,7 @@ window.portfolioData = {
       },
       media: [
   {
-    enabled: true,
+    enabled: false,
     type: "image",
     src: "assets/projects/lunar-solar/model-overview.webp",
     alt: "Simplified block diagram linking design variables, parameters, the shadow module, panel-efficiency module and objective value",
@@ -233,7 +233,7 @@ window.portfolioData = {
           alt: "Comparison of optimised asteroid flyby routes between moving targets",
           role: "Optimised route",
           title: "Asteroid flyby route",
-          caption: "Optimised flyby sequence connecting moving asteroid targets at successive mission stages.",
+          caption: "Optimised flyby routes for different distance–time objective weights, showing how the preferred sequence changes when prioritising shorter travel distance or shorter mission duration.",
           layout: "wide",
           fit: "contain",
           aspect: "natural"
