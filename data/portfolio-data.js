@@ -27,7 +27,7 @@ window.portfolioData = {
   projects: [
     {
       id: "lunar-terrain",
-      order: 2,
+      order: 1,
       title: "Scientifically Grounded Lunar Terrain Generation for High-Fidelity Rover Perception and Navigation Simulation",
       year: "2026",
       context: "ESA Spaceship Poland · Simulation Internship, completed July 2026",
@@ -47,7 +47,7 @@ window.portfolioData = {
           src: "assets/projects/lunar-terrain/four_terrain_preset.gif",
           alt: "Four generated lunar terrain configurations shown side by side",
           role: "Configurable generation",
-          //title: "Four terrain configurations",
+          title: "Four terrain configurations",
           caption: "Regional profiles control crater populations and morphology, degradation, terrain characteristics, rock abundance and placement, allowing one generator to produce distinct terrain families.",
           layout: "wide"
         },
@@ -57,7 +57,7 @@ window.portfolioData = {
           src: "assets/projects/lunar-terrain/dataset_preview.gif",
           alt: "Lunar rover simulation dataset preview showing left stereo, greyscale depth, segmentation and right stereo",
           role: "System application",
-          // title: "From terrain to rover simulation",
+          title: "From terrain to rover simulation",
           caption: "This preview shows the generated terrain applied within the broader LunarSim-PG system, where scenes can support perception, navigation and synthetic-data experiments.",
           layout: "wide"
         },
@@ -67,7 +67,7 @@ window.portfolioData = {
           src: "assets/projects/lunar-terrain/Captura.PNG",
           alt: "Overview of the LunarSim-PG pipeline from regional configuration files through terrain generation, rendering, simulation and dataset generation",
           role: "LunarSim-PG pipeline overview",
-          //title: "LunarSim-PG pipeline overview",
+          title: "LunarSim-PG pipeline overview",
           caption: "The broader pipeline connects regional configuration files with procedural terrain generation, Unreal Engine rendering, simulation runtime, ROS 2 integration and synchronized ground-truth-rich dataset generation.",
           layout: "wide",
           fit: "contain",
@@ -79,7 +79,7 @@ window.portfolioData = {
           src: "assets/projects/lunar-terrain/05_heightmap_overview.png",
           alt: "Heightmap overview showing elevation, hillshade, slope, local elevation roughness, terrain profiles and summary terrain statistics",
           role: "Quantitative terrain products",
-          //title: "Terrain as simulation data",
+          title: "Terrain as simulation data",
           caption: "The generator produces inspectable geometry and derived descriptors, including elevation, hillshade, slope, local roughness, profiles and summary statistics, rather than only a visual surface.",
           layout: "wide",
           fit: "contain",
@@ -91,7 +91,7 @@ window.portfolioData = {
           src: "assets/projects/lunar-terrain/03_rocks_grouped_by_source_crater.png",
           alt: "Rocks grouped by their source crater across a generated lunar terrain",
           role: "Crater-coupled rock generation",
-          //title: "Rocks grouped by source crater",
+          title: "Rocks grouped by source crater",
           caption: "Coloured groups identify rocks associated with source craters. Rim, ejecta and degradation-dependent distributions couple rock placement to crater structure, while background rocks can remain independent.",
           layout: "wide",
           fit: "contain",
@@ -114,7 +114,7 @@ window.portfolioData = {
     },
     {
       id: "lunar-solar",
-      order: 1,
+      order: 2,
       title: "Lunar Solar Panel Placement Simulator",
       year: "2025",
       context: "Multidisciplinary Modelling and Optimisation Project",
@@ -129,39 +129,63 @@ window.portfolioData = {
         fit: "cover"
       },
       media: [
-        {
-          enabled: true,
-          type: "image",
-          src: "assets/projects/lunar-solar/LunarX_C.gif",
-          alt: "Simulated shadow map for a Lunar X terrain region, with illuminated areas in white and shadowed areas in black",
-          role: "Simulation output",
-          title: "Terrain-shadow map",
-          caption: "Binary illumination output for a recognisable Lunar X terrain region. White represents illuminated terrain and black represents shadow.",
-          layout: "wide",
-          fit: "contain"
-        },
-        {
-          enabled: true,
-          type: "image",
-          src: "assets/projects/lunar-solar/model-overview.webp",
-          alt: "Simplified block diagram linking design variables, parameters, the shadow module, panel-efficiency module and objective value",
-          role: "Model overview",
-          title: "Simulation chain",
-          caption: "Simplified architecture: panel-location design variables and model parameters feed the shadow and efficiency modules before the annual objective is evaluated.",
-          fit: "contain"
-        },
-        {
-          enabled: true,
-          type: "image",
-          src: "assets/projects/lunar-solar/model-architecture.webp",
-          alt: "Detailed block diagram of the lunar solar-panel simulator including solar geometry, DEM ray tracing, temperature, efficiency, radiation and energy modules",
-          role: "Model architecture",
-          title: "Detailed multidisciplinary simulator",
-          caption: "Detailed dependency structure linking UTC time and the lunar DEM to solar geometry, terrain ray tracing, surface temperature, panel efficiency, solar irradiance and total energy.",
-          fit: "contain",
-          aspect: "natural"
-        }
-      ],
+  {
+    enabled: true,
+    type: "image",
+    src: "assets/projects/lunar-solar/model-overview.webp",
+    alt: "Simplified block diagram linking design variables, parameters, the shadow module, panel-efficiency module and objective value",
+    role: "Model overview",
+    title: "Simulation chain",
+    caption: "Panel-location design variables and model parameters feed the shadow and efficiency modules before the annual objective is evaluated.",
+    layout: "wide",
+    fit: "contain",
+    aspect: "natural"
+  },
+  {
+    enabled: true,
+    type: "image",
+    src: "assets/projects/lunar-solar/model-architecture.webp",
+    alt: "Detailed block diagram of the lunar solar-panel simulator including solar geometry, DEM ray tracing, temperature, efficiency, radiation and energy modules",
+    role: "Model architecture",
+    title: "Detailed multidisciplinary simulator",
+    caption: "The simulator couples solar geometry, terrain ray tracing, surface temperature, panel efficiency and irradiance to estimate the annual energy available at each candidate location.",
+    layout: "wide",
+    fit: "contain"
+  },
+  {
+    enabled: true,
+    type: "image",
+    src: "assets/projects/lunar-solar/LunarX_C.gif",
+    alt: "Simulated shadow map for a Lunar X terrain region, with illuminated areas in white and shadowed areas in black",
+    role: "Terrain-shadow map",
+    title: "Terrain-shadow map",
+    caption: "Terrain-shadow behaviour was checked on the recognisable Lunar X region, comparing the simulated illumination pattern with expected terrain-driven shadow behaviour.",
+    fit: "contain"
+  },
+  {
+    enabled: true,
+    type: "image",
+    src: "assets/projects/lunar-solar/latSlonS.png",
+    alt: "Comparison of reference and calculated subsolar latitude and longitude over time",
+    role: "Solar-position validation",
+    title: "Solar-position validation",
+    caption: "Calculated subsolar latitude and longitude were compared with reference ephemeris data to check the solar-position model used by the illumination calculation.",
+    fit: "contain",
+    aspect: "natural"
+  },
+  {
+    enabled: true,
+    type: "image",
+    src: "assets/projects/lunar-solar/correlation_pearson.png",
+    alt: "Pearson correlation matrix for the lunar solar-panel design experiment",
+    title: "Sensitivity and correlation",
+    caption: "Pearson analysis was used after running the model to examine which simulated quantities were most strongly associated with annual energy output.",
+     layout: "wide",
+    size: "compact",
+    fit: "contain",
+    aspect: "natural"
+  }
+],
       equation: {
         label: "Annual objective",
         expression: "E = Σₜ I · Aₚ · η_panel(T(γ_s)) · S(x, y, t)",
@@ -178,14 +202,10 @@ window.portfolioData = {
       contribution: "Built a modular MATLAB simulator for lunar solar-panel placement, including shadow, thermal and efficiency models.",
       model: "A modular MATLAB simulator estimates annual output by summing hourly power from constant lunar solar irradiance, panel area, temperature-dependent efficiency and a binary illumination factor. Illumination combines solar altitude and azimuth with DEM-based terrain ray tracing.",
       assumptions: "Solar irradiance is held constant at 1,361 W/m². Surface temperature is approximated through instantaneous radiative balance, and CTJ30 panel efficiency is represented by a linear temperature coefficient. The shadow calculation uses a downsampled SLDEM2015 terrain model, a 260 km comparison radius and a lunar-curvature correction.",
-      implementation: "The two design variables are panel latitude and longitude. Separate modules calculate subsolar position, solar altitude and azimuth, terrain shadowing, radiative surface temperature, panel efficiency and the final annual objective over hourly time steps.",
       validation: "Solar-position equations were compared with JPL planetary and lunar ephemeris data. Additional checks included idealised-sphere illumination, critical-elevation tests on synthetic terrain, a qualitative Lunar X shadow comparison, and expected temperature and efficiency behaviour across their operating ranges.",
       result: "In the 40-point Latin hypercube experiment, panel efficiency had the strongest positive correlation with the annual objective (r = 0.97), while shadow hours had a strong negative correlation (r = −0.90). Sunlit hours were less strongly correlated (r = 0.24), suggesting that avoiding prolonged terrain shadow was more influential than simply maximising raw illumination time in this sample.",
       limitations: "Accuracy and runtime depend strongly on DEM resolution. The current study uses a reduced terrain data set and only 40 design samples. The thermal model neglects thermal inertia, irradiance is constant, the efficiency relation is linear at extreme temperatures, and the Lunar X comparison is qualitative rather than a pixel-level validation.",
       tools: ["MATLAB", "SLDEM2015", "JPL ephemerides", "DEM ray tracing", "Latin hypercube sampling", "Pearson correlation"],
-      links: [
-        { label: "GitHub repository", url: "https://github.com/magonrod/lunar-solar-panel-simulator" }
-      ],
       missingLinks: []
     },
     {
@@ -199,50 +219,36 @@ window.portfolioData = {
       preview: {
         enabled: true,
         type: "image",
-        src: "assets/projects/orbitminer/preview.webp",
-        alt: "Snapshot of an optimised sequence connecting moving Near-Earth asteroid targets",
-        label: "Asteroid mission planning"
+        src: "assets/projects/orbitminer/card.jpg",
+        alt: "Optimised asteroid flyby route showing the sequence between moving asteroid targets",
+        label: "Asteroid flyby route",
+        fit: "cover"
       },
+
       media: [
         {
           enabled: true,
-          type: "video",
-          src: "assets/projects/orbitminer/route-animation.mp4",
-          poster: "assets/projects/orbitminer/preview.webp",
-          role: "Simulation demo",
-          title: "Dynamic asteroid-route animation",
-          caption: "A short animation showing asteroid motion over time and the flyby sequence selected by the optimisation algorithm.",
-          layout: "wide"
+          type: "image",
+          src: "assets/projects/orbitminer/asteroid-route.jpg",
+          alt: "Comparison of optimised asteroid flyby routes between moving targets",
+          role: "Optimised route",
+          title: "Asteroid flyby route",
+          caption: "Optimised flyby sequence connecting moving asteroid targets at successive mission stages.",
+          layout: "wide",
+          fit: "contain",
+          aspect: "natural"
         },
         {
           enabled: true,
           type: "image",
-          src: "assets/projects/orbitminer/algorithm-workflow.webp",
-          alt: "Genetic algorithm workflow for evaluating and improving dynamic asteroid flyby routes",
-          role: "Method",
-          title: "Genetic-algorithm workflow",
-          caption: "A concise diagram of route encoding, fitness evaluation, selection, crossover, mutation and stopping criteria.",
-          fit: "contain"
-        },
-        {
-          enabled: true,
-          type: "image",
-          src: "assets/projects/orbitminer/convergence.webp",
-          alt: "Convergence curves comparing genetic algorithm performance across heuristics or repeated runs",
-          role: "Verification",
-          title: "Convergence and repeatability",
-          caption: "Best and mean objective values across generations, preferably for several runs or heuristic configurations.",
-          fit: "contain"
-        },
-        {
-          enabled: true,
-          type: "image",
-          src: "assets/projects/orbitminer/comparison.webp",
-          alt: "Comparison of final asteroid flyby routes or algorithm variants under different mission assumptions",
-          role: "Results",
-          title: "Route and heuristic comparison",
-          caption: "A clear comparison of final routes, objective values or mission-design assumptions that explains the engineering conclusion.",
-          fit: "contain"
+          src: "assets/projects/orbitminer/best-fitness.webp",
+          alt: "Best route distance obtained by the genetic algorithm over 200 generations",
+          role: "Optimisation convergence",
+          title: "Genetic algorithm convergence",
+          caption: "Evolution of the best route distance across generations, showing progressive improvement and eventual convergence of the genetic algorithm.",
+          layout: "wide",
+          fit: "contain",
+          aspect: "natural"
         }
       ],
       problem: "Sequencing flybys of moving Near-Earth asteroid targets is a time-dependent routing problem in which target positions and mission constraints change during the solution process.",
@@ -268,7 +274,7 @@ window.portfolioData = {
       preview: {
         enabled: true,
         type: "image",
-        src: "assets/projects/rpm/preview.webp",
+        src: "assets/projects/rpm/card.png",
         alt: "Photograph, CAD view or schematic of the random positioning machine with its rotation axes marked",
         label: "Microgravity simulation"
       },
@@ -277,7 +283,6 @@ window.portfolioData = {
           enabled: true,
           type: "video",
           src: "assets/projects/rpm/Video_3_two_axis_three_axis_sphere_trajectories(6).mp4",
-          poster: "assets/projects/rpm/preview.webp",
           mimeType: "video/mp4",
           role: "Trajectory comparison",
           title: "Two-axis and three-axis trajectories",
@@ -289,7 +294,6 @@ window.portfolioData = {
           enabled: true,
           type: "video",
           src: "assets/projects/rpm/Video_5_spheres_with_acceleration_time_cursor(4).mp4",
-          poster: "assets/projects/rpm/preview.webp",
           mimeType: "video/mp4",
           role: "Acceleration environment",
           title: "Acceleration over time",

@@ -77,7 +77,7 @@ h3 { font-size: 1.2rem; }
 .project-summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: minmax(250px, 36%) minmax(0, 1fr) auto; gap: 2rem; align-items: center; padding: 1.35rem; }
 .project-summary::-webkit-details-marker { display: none; }
 .project-card[open] .project-summary { border-bottom: 1px solid var(--line); }
-.project-no-preview, .project-preview { height: 205px; border: 1px solid var(--line); background-color: var(--surface-alt); overflow: hidden; }
+.project-no-preview, .project-preview { height: 325px; border: 1px solid var(--line); background-color: var(--surface-alt); overflow: hidden; }
 .project-no-preview { display: grid; place-items: center; padding: 1rem; color: var(--muted); font-size: .85rem; text-align: center; }
 .project-preview { position: relative; margin: 0; }
 .project-preview img, .project-preview video { display: block; width: 100%; height: 100%; object-fit: cover; }
@@ -106,7 +106,7 @@ h3 { font-size: 1.2rem; }
 .project-media img.is-contain, .project-media video.is-contain { object-fit: contain; padding: .45rem; }
 .project-media a.project-media-frame:hover { border-color: var(--accent); }
 .project-media figcaption { display: grid; gap: .18rem; margin: 0 0 .65rem; color: var(--muted); font-size: .82rem; line-height: 1.45; }
-.project-media figcaption strong { color: var(--text); font-size: .92rem; }
+.project-media figcaption strong { color: var(--accent); font-size: .92rem; }
 .project-media figcaption p { margin: 0; }
 .project-media-role { color: var(--accent); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .65rem; font-weight: 750; letter-spacing: .07em; text-transform: uppercase; }
 .project-media--compact .project-media-frame { width: min(66%, 900px); margin-inline: auto; }
@@ -117,6 +117,21 @@ h3 { font-size: 1.2rem; }
 .project-equation-label { margin: 0 0 .45rem; color: var(--accent); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .68rem; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; }
 .project-equation-expression { margin: 0; color: var(--text); font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.15rem, 2.1vw, 1.55rem); line-height: 1.45; overflow-wrap: anywhere; }
 .project-equation-description { margin: .65rem 0 0; color: var(--muted); font-size: .88rem; }
+.project-model-summary--solar { align-items: center; gap: 1.25rem; margin-bottom: 1.35rem; }
+.project-model-summary--solar .project-equation { padding: .9rem 1.1rem; text-align: center; }
+.project-model-summary--solar .project-equation-expression { font-size: clamp(1.05rem, 1.8vw, 1.35rem); }
+.project-model-summary--solar .equation-sum { display: inline-block; font-size: 1.35em; line-height: .8; vertical-align: -.08em; }
+.project-model-summary--solar .equation-sum sub { font-size: .45em; }
+.project-model-summary--solar .equation-term sub { font-size: .62em; }
+.project-validation-examples { margin-bottom: 1.35rem; }
+.project-validation-examples > h4 { margin: 0 0 .8rem; color: var(--accent-dark); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; }
+.project-media-gallery--validation { margin-bottom: 0; }
+.project-media-gallery--validation .project-media-frame { height: 100%; }
+.project-media-gallery--validation .project-media img { height: 100%; min-height: 180px; object-fit: contain; }
+.project-correlation-section { clear: both; margin-top: 6rem; padding-top: 1.35rem; border-top: 1px solid var(--line); }
+.project-correlation-section > h4 { margin: 0 0 .8rem; color: var(--accent-dark); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; }
+.project-media-gallery--correlation { grid-template-columns: minmax(0, 1fr); margin-bottom: 0; }
+.project-media-gallery--correlation .project-media { grid-column: 1 / -1; max-width: none; }
 .project-facts { display: grid; margin: 0; border-top: 1px solid var(--line); }
 .project-facts div { display: grid; grid-template-columns: minmax(115px, .45fr) minmax(0, 1fr); gap: .8rem; padding: .65rem 0; border-bottom: 1px solid var(--line); }
 .project-facts dt { color: var(--accent); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .68rem; font-weight: 750; letter-spacing: .05em; text-transform: uppercase; }

@@ -49,9 +49,6 @@
   }
 
   function renderMediaCaption(item) {
-    const role = item.role
-      ? `<span class="project-media-role">${escapeHTML(item.role)}</span>`
-      : '';
     const title = item.title
       ? `<strong>${escapeHTML(item.title)}</strong>`
       : '';
@@ -59,8 +56,8 @@
       ? `<p>${escapeHTML(item.caption)}</p>`
       : '';
 
-    return role || title || caption
-      ? `<figcaption>${role}${title}${caption}</figcaption>`
+    return title || caption
+      ? `<figcaption>${title}${caption}</figcaption>`
       : '';
   }
 
@@ -116,14 +113,35 @@
     const equation = project.equation && project.equation.expression
       ? `<div class="project-equation">
           <p class="project-equation-label">${escapeHTML(project.equation.label || 'Model equation')}</p>
-          <p class="project-equation-expression">${escapeHTML(project.equation.expression)}</p>
+          <p class="project-equation-expression" aria-label="E equals the sum over time of irradiance times panel area times panel efficiency at temperature of solar altitude times the illumination factor"><span class="equation-symbol">E</span> = <span class="equation-sum">∑<sub>t</sub></span> <span class="equation-term">I A<sub>p</sub> η<sub>panel</sub>(T(γ<sub>s</sub>)) S(x, y, t)</span></p>
           ${project.equation.description ? `<p class="project-equation-description">${escapeHTML(project.equation.description)}</p>` : ''}
         </div>`
       : '';
 
     return equation || facts
-      ? `<div class="project-model-summary">${equation}${facts}</div>`
+      ? `<div class="project-model-summary${project.id === 'lunar-solar' ? ' project-model-summary--solar' : ''}">${equation}${facts}</div>`
       : '';
+  }
+
+  function renderLunarSolarDetail(project) {
+    const media = project.media.filter(mediaIsEnabled);
+    const simulationChain = media.filter((item) => item.title === 'Simulation chain');
+    const architecture = media.filter((item) => item.title === 'Detailed multidisciplinary simulator');
+    const validation = media.filter((item) => item.title === 'Terrain-shadow map' || item.title === 'Solar-position validation');
+    const correlation = media.filter((item) => item.title === 'Sensitivity and correlation');
+    const renderGroup = (items, className = '') => renderProjectMedia({ ...project, media: items }).replace(
+      'project-media-gallery',
+      `project-media-gallery ${className}`.trim()
+    );
+
+    return `${renderGroup(simulationChain)}${renderProjectSupplement(project)}${renderGroup(architecture)}
+      <section class="project-validation-examples" aria-labelledby="validation-examples-title">
+        <h4 id="validation-examples-title">Validation examples</h4>
+        ${renderGroup(validation, 'project-media-gallery--validation')}
+      </section>
+      <section class="project-correlation-section" aria-labelledby="correlation-title">
+        ${renderGroup(correlation, 'project-media-gallery--correlation')}
+      </section>`;
   }
 
   function renderProjectLinks(project) {
@@ -147,23 +165,13 @@
 
     switch (project.id) {
       case 'lunar-solar':
-        blocks = [
-          ['Model', project.model],
-          ['Validation', project.validation],
-          ['Evidence', project.result],
-          ['Limits', project.limitations]
-        ];
+        blocks = [];
         break;
       case 'lunar-terrain':
         blocks = [];
         break;
       case 'orbitminer':
-        blocks = [
-          ['Routing problem', project.problem],
-          ['Optimisation approach', project.model],
-          ['Benchmarking and reformulation', `${project.validation} ${project.assumptions}`],
-          ['Evidence', project.result]
-        ];
+        blocks = [];
         break;
       case 'rpm':
         blocks = [];
@@ -192,8 +200,8 @@
           <span class="project-toggle" aria-hidden="true">+</span>
         </summary>
         <div class="project-detail">
-          ${renderProjectMedia(project)}
-          ${renderProjectSupplement(project)}
+          ${project.id === 'lunar-solar' ? renderLunarSolarDetail(project) : renderProjectMedia(project)}
+          ${project.id === 'lunar-solar' ? '' : renderProjectSupplement(project)}
           ${renderProjectDetails(project)}
           ${renderProjectLinks(project)}
         </div>
