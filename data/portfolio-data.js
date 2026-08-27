@@ -31,7 +31,7 @@ window.portfolioData = {
       title: "Scientifically Grounded Lunar Terrain Generation for High-Fidelity Rover Perception and Navigation Simulation",
       year: "2026",
       context: "ESA Spaceship Poland · Simulation Internship, completed July 2026",
-      tags: ["Procedural Generation", "Planetary Robotics", "Terrain Modelling", "Simulation"],
+      tags: ["Procedural modelling", "Terrain analysis", "Unreal Engine 5", "ROS 2"],
       visual: "terrain",
       preview: {
         enabled: true,
@@ -118,7 +118,7 @@ window.portfolioData = {
       title: "Lunar Solar Panel Placement Simulator",
       year: "2025",
       context: "Multidisciplinary Modelling and Optimisation Project",
-      tags: ["Simulation", "Optimisation", "Lunar Systems", "MATLAB"],
+      tags: ["MATLAB", "Multidisciplinary design optimisation", "Latin hypercube sampling", "Sensitivity analysis", "Pearson correlation", "DEM ray tracing", "JPL ephemerides"],
       visual: "solar",
       preview: {
         enabled: true,
@@ -214,7 +214,7 @@ window.portfolioData = {
       title: "ORBITMiNER: Near-Earth Asteroid Flyby Planning",
       year: "2023",
       context: "Bachelor’s Thesis · Grade 10/10",
-      tags: ["Mission Planning", "Optimisation", "Near-Earth Asteroids", "Python"],
+      tags: ["Python", "Genetic algorithms", "Dynamic routing", "Mission analysis"],
       visual: "orbit",
       preview: {
         enabled: true,
@@ -269,7 +269,7 @@ window.portfolioData = {
       title: "Random Positioning Machine for Microgravity Simulation",
       year: "2022",
       context: "Collaborative research project",
-      tags: ["Microgravity", "Dynamical Simulation", "Verification", "Rotational Motion"],
+      tags: ["Microgravity simulation", "Rotational-motion analysis", "Residual-acceleration evaluation"],
       visual: "rotation",
       preview: {
         enabled: true,
@@ -461,7 +461,7 @@ window.portfolioData = {
   skills: [
     {
       title: "Modelling",
-      items: ["MATLAB", "COMSOL Multiphysics", "Simulink", "Unreal Engine 5", "ROS 2", "MatCont"]
+      items: ["MATLAB", "COMSOL Multiphysics", "Simulink", "Unreal Engine 5", "ROS 2", "MatCont", "Microgravity simulation", "Rotational-motion analysis"]
     },
     {
       title: "Optimisation",
@@ -473,11 +473,11 @@ window.portfolioData = {
     },
     {
       title: "Aerospace",
-      items: ["Orbital mechanics", "Flight mechanics", "Automatic control", "AOCS sizing", "Mission analysis", "CDP4-COMET"]
+      items: ["Orbital mechanics", "Flight mechanics", "Automatic control", "AOCS sizing", "Mission analysis", "Dynamic routing", "CDP4-COMET"]
     },
     {
       title: "Verification",
-      items: ["JPL ephemerides", "DEM ray tracing", "Literature comparison", "Requirements review", "Test-plan review", "OUNPPM", "NAVTOOLS"]
+      items: ["JPL ephemerides", "DEM ray tracing", "Literature comparison", "Requirements review", "Test-plan review", "Residual-acceleration evaluation", "OUNPPM", "NAVTOOLS"]
     },
     {
       title: "Languages",
