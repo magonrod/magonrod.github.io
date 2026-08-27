@@ -19,7 +19,7 @@ window.portfolioData = {
     name: "María González Rodríguez",
     headline: "Aerospace Engineer | Simulation & Optimisation",
     email: "glezrodriguezmaria@gmail.com",
-    github: "https://github.com/magonrod",
+    // github: "https://github.com/magonrod",
     linkedin: "https://www.linkedin.com/in/maria-gonzalez-rod/",
     cvPath: "assets/CV.pdf"
   },
@@ -123,9 +123,9 @@ window.portfolioData = {
       preview: {
         enabled: true,
         type: "image",
-        src: "assets/projects/lunar-solar/LunarX_C.gif",
+        src: "assets/projects/lunar-solar/card.webp",
         alt: "Binary illumination map for a Lunar X terrain region, with illuminated areas in white and terrain shadows in black",
-        label: "Actual simulator output",
+        label: "",
         fit: "cover"
       },
       media: [
@@ -221,7 +221,7 @@ window.portfolioData = {
         type: "image",
         src: "assets/projects/orbitminer/card.jpg",
         alt: "Optimised asteroid flyby route showing the sequence between moving asteroid targets",
-        label: "Asteroid flyby route",
+        label: "",
         fit: "cover"
       },
 
@@ -276,7 +276,7 @@ window.portfolioData = {
         type: "image",
         src: "assets/projects/rpm/card.png",
         alt: "Photograph, CAD view or schematic of the random positioning machine with its rotation axes marked",
-        label: "Microgravity simulation"
+        label: ""
       },
       media: [
         {

@@ -285,7 +285,9 @@
         <p class="contact-invitation">${escapeHTML(person.invitation)}</p>
         <dl>
           <div><dt>Email</dt><dd><a href="mailto:${escapeHTML(person.email)}">${escapeHTML(person.email)}</a></dd></div>
+          <!-- UNCOMMENT FOR THE GITHUB BUTTONS AND LINKS
           <div><dt>GitHub</dt><dd><a href="${escapeHTML(person.github)}" target="_blank" rel="noreferrer">github.com/magonrod <span class="sr-only">(opens in a new tab)</span></a></dd></div>
+          -->
           <div><dt>LinkedIn</dt><dd><a href="${escapeHTML(person.linkedin)}" target="_blank" rel="noreferrer">linkedin.com/in/maria-gonzalez-rod <span class="sr-only">(opens in a new tab)</span></a></dd></div>
         </dl>
         <a class="button button-light" href="mailto:${escapeHTML(person.email)}">Email me</a>
