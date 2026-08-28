@@ -21,7 +21,7 @@ window.portfolioData = {
     email: "glezrodriguezmaria@gmail.com",
     // github: "https://github.com/magonrod",
     linkedin: "https://www.linkedin.com/in/maria-gonzalez-rod/",
-    cvPath: "assets/CV.pdf"
+    cvPath: "assets/CV_MGR.pdf"
   },
 
   projects: [
@@ -110,7 +110,7 @@ window.portfolioData = {
       limitations: "Quantitative validation metrics and public software or demonstration links are not available in the supplied material.",
       tools: ["Unreal Engine 5", "Procedural modelling", "C++" ],
       links: [
-        { label: "GitHub repository", url: "https://github.com/exarchosioannis/LunarSim-PG" }
+        { label: "View repository", url: "https://github.com/exarchosioannis/LunarSim-PG" }
       ],
       missingLinks: []
     },
@@ -377,7 +377,7 @@ window.portfolioData = {
       dates: "September 2024 — February 2027",
       details: [
         "Key courses: Dynamical Systems, Numerical Methods for PDEs, Multidisciplinary Design Optimization, Reduced-Order Modelling, Stability of Physical Systems, Inverse Problems.",
-        "Multidisciplinary Design Optimization: 10/10, highest distinction; implemented in MATLAB.",
+        "Multidisciplinary Design Optimization: 10/10, highest distinction, implemented in MATLAB.",
         "Hands-on modelling and simulation with COMSOL Multiphysics."
       ]
     },
@@ -387,7 +387,7 @@ window.portfolioData = {
       dates: "September 2018 — September 2023",
       details: [
         "Key courses: Orbital Mechanics, Flight Mechanics, Control and Optimization, Numerical Methods, Finite Element Methods, Aerodynamics, Aeroelasticity.",
-        "Bachelor’s thesis: ORBITMiNER — Optimal Routing Biological-Inspired Techniques for Mining of Near-Earth Resources, awarded the highest distinction."
+        "Bachelor’s thesis: ORBITMiNER - Optimal Routing Biological-Inspired Techniques for Mining of Near-Earth Resources, awarded the highest distinction."
       ]
     }
   ],
