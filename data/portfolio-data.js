@@ -101,7 +101,7 @@ window.portfolioData = {
       ],
       summary: "Lunar rover perception and navigation need simulation environments that are both realistic and controllable. Existing planetary simulators often offer high visual fidelity but limited accessibility, while open robotics simulators tend to rely on more generic terrain generation.",
       problem: "Lunar rover perception and navigation need simulation environments that are both realistic and controllable. Existing planetary simulators often offer high visual fidelity but limited accessibility, while open robotics simulators tend to rely on more generic terrain generation.",
-      contribution: "I developed the procedural terrain-generation pipeline, using lunar surface characteristics to define configurable regional profiles controlling crater populations, morphology, degradation and terrain-dependent rock distributions for perception and navigation experiments",
+      contribution: "I developed the procedural terrain-generation pipeline, using lunar surface characteristics to define configurable regional profiles controlling crater populations, morphology, degradation and terrain-dependent rock distributions for perception and navigation experiments.",
       model: "Statistical and geological descriptions of crater populations, degradation states, ejecta zones and rock-placement distributions were translated into a parameterised terrain-generation model.",
       assumptions: "Terrain morphology is generated from literature-derived statistical descriptions. The available sources do not provide final quantitative error metrics or a complete statement of all geological assumptions.",
       implementation: "Developed the terrain-generation module for an Unreal Engine 5 lunar environment simulator within a ROS 2-integrated rover simulation framework.",
@@ -109,7 +109,9 @@ window.portfolioData = {
       result: "Delivered scientifically grounded terrain and analysis layers intended to support perception, navigation, synthetic sensor-data generation and future sim-to-real workflows.",
       limitations: "Quantitative validation metrics and public software or demonstration links are not available in the supplied material.",
       tools: ["Unreal Engine 5", "Procedural modelling", "C++" ],
-      links: [],
+      links: [
+        { label: "GitHub repository", url: "https://github.com/exarchosioannis/LunarSim-PG" }
+      ],
       missingLinks: []
     },
     {

@@ -88,6 +88,7 @@ h3 { font-size: 1.2rem; }
 .project-context { margin: 0; color: var(--muted); }
 .project-contribution, .project-result { margin: .75rem 0 0; color: #3f5262; font-size: .91rem; line-height: 1.5; }
 .project-contribution strong, .project-result strong { color: var(--accent-dark); }
+.project-card-link { display: inline-block; margin-top: .65rem; }
 .project-tags { display: flex; flex-wrap: wrap; gap: .4rem; padding: 0; margin: .9rem 0 0; list-style: none; }
 .project-tags li { padding: .2rem .48rem; border: 1px solid var(--line); background: var(--surface-alt); font-family: ui-monospace, monospace; font-size: .67rem; }
 .project-toggle { display: inline-grid; place-items: center; width: 40px; aspect-ratio: 1; border: 1px solid var(--line); color: var(--accent); font-size: 1.25rem; transition: transform .2s ease; }

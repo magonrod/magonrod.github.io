@@ -186,6 +186,10 @@
   }
 
   function projectTemplate(project) {
+    const cardLink = project.id === 'lunar-terrain' && project.links?.[0]
+      ? `<a class="text-link project-card-link" href="${escapeHTML(project.links[0].url)}"${externalLinkAttributes(project.links[0].url)}>View repository <span aria-hidden="true">↗︎</span><span class="sr-only"> (opens in a new tab)</span></a>`
+      : '';
+
     return `
       <details class="project-card" data-reveal>
         <summary class="project-summary">
@@ -195,6 +199,7 @@
             <h3 class="project-heading">${escapeHTML(project.title)}</h3>
             <p class="project-context">${escapeHTML(project.summary || project.problem)}</p>
             <p class="project-contribution"><strong>My contribution:</strong> ${escapeHTML(project.contribution || project.implementation)}</p>
+            ${cardLink}
             <ul class="project-tags" aria-label="Project topics">${renderList(project.tags)}</ul>
           </div>
           <span class="project-toggle" aria-hidden="true">↓</span>
