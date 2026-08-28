@@ -10,7 +10,7 @@
 window.portfolioData = {
   site: {
     title: "María González Rodríguez",
-    // description: "Engineering project portfolio focused on space systems, simulation, numerical modelling, validation and optimisation.",
+    // description: "My portfolio.",
     canonicalUrl: "https://magonrod.github.io/",
     repositoryUrl: "https://github.com/magonrod/magonrod.github.io"
   },
