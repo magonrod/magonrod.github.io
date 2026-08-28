@@ -9,8 +9,8 @@
 
 window.portfolioData = {
   site: {
-    title: "María González Rodríguez | Space Systems Modelling & Simulation",
-    description: "Engineering project portfolio focused on space systems, simulation, numerical modelling, validation and optimisation.",
+    title: "María González Rodríguez",
+    // description: "Engineering project portfolio focused on space systems, simulation, numerical modelling, validation and optimisation.",
     canonicalUrl: "https://magonrod.github.io/",
     repositoryUrl: "https://github.com/magonrod/magonrod.github.io"
   },
@@ -30,8 +30,8 @@ window.portfolioData = {
       order: 1,
       title: "Scientifically Grounded Lunar Terrain Generation for High-Fidelity Rover Perception and Navigation Simulation",
       year: "2026",
-      context: "ESA Spaceship Poland · Simulation Internship, completed July 2026",
-      tags: ["Procedural modelling", "Terrain analysis", "Unreal Engine 5", "ROS 2"],
+      context: "ESA Spaceship Poland Project",
+      tags: ["Unreal Engine 5", "Procedural modelling", "C++" ],
       visual: "terrain",
       preview: {
         enabled: true,
@@ -108,17 +108,17 @@ window.portfolioData = {
       validation: "Generated co-registered elevation, slope, crater/ejecta classification and spatial-density layers, then checked outputs against lunar-surface literature.",
       result: "Delivered scientifically grounded terrain and analysis layers intended to support perception, navigation, synthetic sensor-data generation and future sim-to-real workflows.",
       limitations: "Quantitative validation metrics and public software or demonstration links are not available in the supplied material.",
-      tools: ["Procedural modelling", "Scientific parameterisation", "Terrain analysis", "LunarSim-PG collaboration"],
+      tools: ["Unreal Engine 5", "Procedural modelling", "C++" ],
       links: [],
       missingLinks: []
     },
     {
       id: "lunar-solar",
       order: 2,
-      title: "Lunar Solar Panel Placement Simulator",
+      title: "Optimizing Solar Panel Placement on the Moon for Maximum Energy Production",
       year: "2025",
       context: "Multidisciplinary Modelling and Optimisation Project",
-      tags: ["MATLAB", "Multidisciplinary design optimisation", "Latin hypercube sampling", "Sensitivity analysis", "Pearson correlation", "DEM ray tracing", "JPL ephemerides"],
+      tags: ["MATLAB", "JPL ephemerides"],
       visual: "solar",
       preview: {
         enabled: true,
@@ -129,63 +129,63 @@ window.portfolioData = {
         fit: "cover"
       },
       media: [
-  {
-    enabled: false,
-    type: "image",
-    src: "assets/projects/lunar-solar/model-overview.webp",
-    alt: "Simplified block diagram linking design variables, parameters, the shadow module, panel-efficiency module and objective value",
-    role: "Model overview",
-    title: "Simulation chain",
-    caption: "Panel-location design variables and model parameters feed the shadow and efficiency modules before the annual objective is evaluated.",
-    layout: "wide",
-    fit: "contain",
-    aspect: "natural"
-  },
-  {
-    enabled: true,
-    type: "image",
-    src: "assets/projects/lunar-solar/model-architecture.webp",
-    alt: "Detailed block diagram of the lunar solar-panel simulator including solar geometry, DEM ray tracing, temperature, efficiency, radiation and energy modules",
-    role: "Model architecture",
-    title: "Detailed multidisciplinary simulator",
-    caption: "The simulator couples solar geometry, terrain ray tracing, surface temperature, panel efficiency and irradiance to estimate the annual energy available at each candidate location.",
-    layout: "wide",
-    fit: "contain"
-  },
-  {
-    enabled: true,
-    type: "image",
-    src: "assets/projects/lunar-solar/LunarX_C.gif",
-    alt: "Simulated shadow map for a Lunar X terrain region, with illuminated areas in white and shadowed areas in black",
-    role: "Terrain-shadow map",
-    title: "Terrain-shadow map",
-    caption: "Terrain-shadow behaviour was checked on the recognisable Lunar X region, comparing the simulated illumination pattern with expected terrain-driven shadow behaviour.",
-    fit: "contain"
-  },
-  {
-    enabled: true,
-    type: "image",
-    src: "assets/projects/lunar-solar/latSlonS.png",
-    alt: "Comparison of reference and calculated subsolar latitude and longitude over time",
-    role: "Solar-position validation",
-    title: "Solar-position validation",
-    caption: "Calculated subsolar latitude and longitude were compared with reference ephemeris data to check the solar-position model used by the illumination calculation.",
-    fit: "contain",
-    aspect: "natural"
-  },
-  {
-    enabled: true,
-    type: "image",
-    src: "assets/projects/lunar-solar/correlation_pearson.png",
-    alt: "Pearson correlation matrix for the lunar solar-panel design experiment",
-    title: "Sensitivity and correlation",
-    caption: "Pearson analysis was used after running the model to examine which simulated quantities were most strongly associated with annual energy output.",
-     layout: "wide",
-    size: "compact",
-    fit: "contain",
-    aspect: "natural"
-  }
-],
+        {
+          enabled: false,
+          type: "image",
+          src: "assets/projects/lunar-solar/model-overview.webp",
+          alt: "Simplified block diagram linking design variables, parameters, the shadow module, panel-efficiency module and objective value",
+          role: "Model overview",
+          title: "Simulation chain",
+          caption: "Panel-location design variables and model parameters feed the shadow and efficiency modules before the annual objective is evaluated.",
+          layout: "wide",
+          fit: "contain",
+          aspect: "natural"
+        },
+        {
+          enabled: true,
+          type: "image",
+          src: "assets/projects/lunar-solar/model-architecture.webp",
+          alt: "Detailed block diagram of the lunar solar-panel simulator including solar geometry, DEM ray tracing, temperature, efficiency, radiation and energy modules",
+          role: "Model architecture",
+          title: "Detailed multidisciplinary simulator",
+          caption: "The simulator couples solar geometry, terrain ray tracing, surface temperature, panel efficiency and irradiance to estimate the annual energy available at each candidate location.",
+          layout: "wide",
+          fit: "contain"
+        },
+        {
+          enabled: true,
+          type: "image",
+          src: "assets/projects/lunar-solar/LunarX_C.gif",
+          alt: "Simulated shadow map for a Lunar X terrain region, with illuminated areas in white and shadowed areas in black",
+          role: "Terrain-shadow map",
+          title: "Terrain-shadow map",
+          caption: "Terrain-shadow behaviour was checked on the recognisable Lunar X region, comparing the simulated illumination pattern with expected terrain-driven shadow behaviour.",
+          fit: "contain"
+        },
+        {
+          enabled: true,
+          type: "image",
+          src: "assets/projects/lunar-solar/latSlonS.png",
+          alt: "Comparison of reference and calculated subsolar latitude and longitude over time",
+          role: "Solar-position validation",
+          title: "Solar-position validation",
+          caption: "Calculated subsolar latitude and longitude were compared with reference ephemeris data to check the solar-position model used by the illumination calculation.",
+          fit: "contain",
+          aspect: "natural"
+        },
+        {
+          enabled: true,
+          type: "image",
+          src: "assets/projects/lunar-solar/correlation_pearson.png",
+          alt: "Pearson correlation matrix for the lunar solar-panel design experiment",
+          title: "Sensitivity and correlation",
+          caption: "Pearson analysis was used after running the model to examine which simulated quantities were most strongly associated with annual energy output.",
+          layout: "wide",
+          size: "compact",
+          fit: "contain",
+          aspect: "natural"
+        }
+      ],
       equation: {
         label: "Annual objective",
         expression: "E = Σₜ I · Aₚ · η_panel(T(γ_s)) · S(x, y, t)",
@@ -205,16 +205,16 @@ window.portfolioData = {
       validation: "Solar-position equations were compared with JPL planetary and lunar ephemeris data. Additional checks included idealised-sphere illumination, critical-elevation tests on synthetic terrain, a qualitative Lunar X shadow comparison, and expected temperature and efficiency behaviour across their operating ranges.",
       result: "In the 40-point Latin hypercube experiment, panel efficiency had the strongest positive correlation with the annual objective (r = 0.97), while shadow hours had a strong negative correlation (r = −0.90). Sunlit hours were less strongly correlated (r = 0.24), suggesting that avoiding prolonged terrain shadow was more influential than simply maximising raw illumination time in this sample.",
       limitations: "Accuracy and runtime depend strongly on DEM resolution. The current study uses a reduced terrain data set and only 40 design samples. The thermal model neglects thermal inertia, irradiance is constant, the efficiency relation is linear at extreme temperatures, and the Lunar X comparison is qualitative rather than a pixel-level validation.",
-      tools: ["MATLAB", "SLDEM2015", "JPL ephemerides", "DEM ray tracing", "Latin hypercube sampling", "Pearson correlation"],
+      tools: ["MATLAB", "JPL ephemerides"],
       missingLinks: []
     },
     {
       id: "orbitminer",
       order: 3,
-      title: "ORBITMiNER: Near-Earth Asteroid Flyby Planning",
+      title: "ORBITMiNER: Optimal Routing Biological-Inspired Techniques for Mining of Near-Earth Resources",
       year: "2023",
-      context: "Bachelor’s Thesis · Grade 10/10",
-      tags: ["Python", "Genetic algorithms", "Dynamic routing", "Mission analysis"],
+      context: "Bachelor’s Thesis",
+      tags: ["Python", "Heuristic optimisation", "Mission analysis"],
       visual: "orbit",
       preview: {
         enabled: true,
@@ -233,7 +233,7 @@ window.portfolioData = {
           alt: "Comparison of optimised asteroid flyby routes between moving targets",
           role: "Optimised route",
           title: "Asteroid flyby route",
-          caption: "Optimised flyby routes for different distance–time objective weights, showing how the preferred sequence changes when prioritising shorter travel distance or shorter mission duration.",
+          caption: "Optimised flyby routes for different distance-time objective weights, showing how the preferred sequence changes when prioritising shorter travel distance or shorter mission duration.",
           layout: "wide",
           fit: "contain",
           aspect: "natural"
@@ -259,7 +259,7 @@ window.portfolioData = {
       validation: "Tested algorithm performance under different heuristics and assumptions rather than presenting a single unconstrained optimum.",
       result: "Established a computational framework for exploring interplanetary routing strategies. Final numerical performance results are not present in the supplied material.",
       limitations: "Benchmark cases, convergence evidence and the final mission-planning result still need to be added from the thesis.",
-      tools: ["Python", "Genetic algorithms", "Dynamic routing", "Mission planning"],
+      tools: ["Python", "Heuristic optimisation"],
       links: [],
       missingLinks: []
     },
@@ -269,7 +269,7 @@ window.portfolioData = {
       title: "Random Positioning Machine for Microgravity Simulation",
       year: "2022",
       context: "Collaborative research project",
-      tags: ["Microgravity simulation", "Rotational-motion analysis", "Residual-acceleration evaluation"],
+      tags: ["MATLAB", "Simulink"],
       visual: "rotation",
       preview: {
         enabled: true,
@@ -302,14 +302,13 @@ window.portfolioData = {
         }
       ],
       problem: "Random Positioning Machines simulate microgravity by continuously changing a sample’s orientation relative to Earth’s gravity. The motion strategy therefore affects the residual accelerations experienced by the sample and how well the desired gravity environment is reproduced.",
-      contribution: "Developed and analysed the motion algorithms used to generate rotational trajectories, including the ongoing comparison of two-axis and three-axis configurations and their resulting acceleration environments.",
-      model: "Represented rotational patterns and the resulting gravity-vector evolution to assess simulated microgravity and partial-gravity conditions.",
+      contribution: "Developed and analysed the rotational-motion algorithms implemented in U-Grav’s Random Positioning Machine for partial-gravity simulation, evaluating two-axis and three-axis trajectories and their resulting residual-acceleration environments.", model: "Represented rotational patterns and the resulting gravity-vector evolution to assess simulated microgravity and partial-gravity conditions.",
       assumptions: "The supplied sources confirm the evaluation criteria but do not provide the full hardware setup, implementation details or numerical thresholds.",
       implementation: "Designed and analysed rotational algorithms as part of an improved random positioning machine concept.",
       validation: "Evaluated residual acceleration and simulated gravity-vector behaviour as fidelity indicators.",
       result: "The research focused on reducing residual acceleration and improving simulated-space-environment fidelity; numerical results are not included in the supplied material.",
       limitations: "Implementation tools, experimental setup and quantitative validation results still need to be added.",
-      tools: ["Rotational-motion analysis", "Microgravity simulation", "Residual-acceleration evaluation"],
+      tools: ["MATLAB", "Simulink"],
       links: [],
       missingLinks: []
     }
@@ -324,7 +323,7 @@ window.portfolioData = {
       points: [
         "Developed a science-parameterised terrain-generation module for an Unreal Engine 5 lunar environment simulator in a ROS 2-integrated rover simulation framework.",
         "Modelled crater populations, degradation states, ejecta zones and rock placement from statistical and geological lunar-surface descriptions.",
-        "Generated co-registered analysis layers and compared outputs with lunar-surface literature."
+        "Developed analysis tools to inspect terrain properties and compare the generated environments with expected lunar-surface characteristics."
       ]
     },
     {
@@ -375,9 +374,9 @@ window.portfolioData = {
       institution: "Universidad Politécnica de Madrid",
       dates: "September 2024 — February 2027",
       details: [
-        "Ordinary and partial differential equations, dynamical systems, physical-system stability and bifurcation analysis with MatCont.",
-        "Multidisciplinary Design Optimization with MATLAB: highest distinction, 10/10.",
-        "COMSOL Multiphysics and numerical methods for modelling and simulation."
+        "Key courses: Dynamical Systems, Numerical Methods for PDEs, Multidisciplinary Design Optimization, Reduced-Order Modelling, Stability of Physical Systems, Inverse Problems.",
+        "Multidisciplinary Design Optimization: 10/10, highest distinction; implemented in MATLAB.",
+        "Hands-on modelling and simulation with COMSOL Multiphysics."
       ]
     },
     {
@@ -385,8 +384,8 @@ window.portfolioData = {
       institution: "Universidad Politécnica de Madrid",
       dates: "September 2018 — September 2023",
       details: [
-        "Control theory, optimisation, numerical methods, flight and orbital mechanics, composite materials and engineering graphics.",
-        "Bachelor’s thesis: ORBITMiNER: grade 10/10."
+        "Key courses: Orbital Mechanics, Flight Mechanics, Control and Optimization, Numerical Methods, Finite Element Methods, Aerodynamics, Aeroelasticity.",
+        "Bachelor’s thesis: ORBITMiNER — Optimal Routing Biological-Inspired Techniques for Mining of Near-Earth Resources, awarded the highest distinction."
       ]
     }
   ],
@@ -428,16 +427,18 @@ window.portfolioData = {
     },
     {
       title: "Scientifically Grounded Lunar Terrain Generation for High-Fidelity Rover Perception and Navigation Simulation",
+      authors: ["Ioannis Exarchos", "Noora Archer", "Alfonso Martínez Petersen", "Marek Kraft"],
       venue: "i-SAIRAS/iSpaRo 2026",
       date: "November 2026",
       role: "Co-author",
-      status: "Selected for presentation",
+      status: "PAPER SUBMITTED, UNDER REVIEW",
       summary: "Contributed the terrain-generation module, including crater, ejecta and rock-placement modelling, co-registered analysis layers and comparison with lunar-surface literature.",
       link: "",
       linkLabel: ""
     },
     {
       title: "Development of an Improved Random Positioning Machine to Simulate Organic Growth in Microgravity",
+      authors: ["Jorge Moreno Pérez", "Carlos San Miguel Ortego"],
       venue: "73rd International Astronautical Congress (IAC)",
       date: "September 2022",
       role: "Co-author",
@@ -460,28 +461,21 @@ window.portfolioData = {
 
   skills: [
     {
-      title: "Modelling",
-      items: ["MATLAB", "COMSOL Multiphysics", "Simulink", "Unreal Engine 5", "ROS 2", "MatCont", "Microgravity simulation", "Rotational-motion analysis"]
-    },
-    {
-      title: "Optimisation",
-      items: ["Multidisciplinary design optimisation", "Genetic algorithms", "Latin hypercube sampling", "Sensitivity analysis", "Pearson correlation"]
+      title: "Simulation & Modelling",
+      items: ["COMSOL Multiphysics", "MatCont", "Unreal Engine 5"]
     },
     {
       title: "Programming",
-      items: ["Python", "Fortran", "LaTeX"]
+      items: ["MATLAB", "Simulink", "Python", "Fortran"]
     },
+
     {
-      title: "Aerospace",
-      items: ["Orbital mechanics", "Flight mechanics", "Automatic control", "AOCS sizing", "Mission analysis", "Dynamic routing", "CDP4-COMET"]
-    },
-    {
-      title: "Verification",
-      items: ["JPL ephemerides", "DEM ray tracing", "Literature comparison", "Requirements review", "Test-plan review", "Residual-acceleration evaluation", "OUNPPM", "NAVTOOLS"]
+      title: "Engineering Tools",
+      items: ["CDP4-COMET", "CATIA V5", "LaTeX"]
     },
     {
       title: "Languages",
-      items: ["Spanish: Native", "English:C1 Advanced"]
+      items: ["Spanish: Native", "English: C1 Advanced"]
     }
   ]
 

@@ -197,13 +197,14 @@
             <p class="project-contribution"><strong>My contribution:</strong> ${escapeHTML(project.contribution || project.implementation)}</p>
             <ul class="project-tags" aria-label="Project topics">${renderList(project.tags)}</ul>
           </div>
-          <span class="project-toggle" aria-hidden="true">+</span>
+          <span class="project-toggle" aria-hidden="true">↓</span>
         </summary>
         <div class="project-detail">
           ${project.id === 'lunar-solar' ? renderLunarSolarDetail(project) : renderProjectMedia(project)}
           ${project.id === 'lunar-solar' ? '' : renderProjectSupplement(project)}
           ${renderProjectDetails(project)}
           ${renderProjectLinks(project)}
+          <button class="project-close-toggle" type="button" aria-label="Close ${escapeHTML(project.title)}">↑</button>
         </div>
       </details>`;
   }
@@ -214,6 +215,18 @@
       const projects = data.projects.slice().sort((first, second) => (first.order || 99) - (second.order || 99));
       container.innerHTML = projects.map(projectTemplate).join('');
     }
+  }
+
+  function setupProjectCloseButtons() {
+    document.querySelectorAll('.project-close-toggle').forEach((button) => {
+      button.addEventListener('click', () => {
+        const projectCard = button.closest('.project-card');
+        if (projectCard) {
+          projectCard.open = false;
+          requestAnimationFrame(() => projectCard.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+        }
+      });
+    });
   }
 
   function renderTimeline(containerId, entries, titleKey = 'role') {
@@ -257,6 +270,7 @@
             <p>${escapeHTML(item.summary)}</p>
           </div>
           <p class="publication-meta">
+            ${Array.isArray(item.authors) && item.authors.length ? `<span class="publication-authors">${item.authors.map(escapeHTML).join(', ')}</span>` : ''}
             <span>${escapeHTML(item.venue)}</span>
             <span>${escapeHTML(item.date || item.year || '')}</span>
             <span>${escapeHTML(item.role)}</span>
@@ -373,6 +387,7 @@
   }
 
   renderProjects();
+  setupProjectCloseButtons();
   renderTimeline('experience-list', data.experience, 'role');
   renderEducation();
   renderTimeline('workshops-list', data.workshops, 'title');
