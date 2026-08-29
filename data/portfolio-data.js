@@ -422,7 +422,7 @@ window.portfolioData = {
       venue: "5th Symposium on Space Educational Activities",
       date: "April 2026",
       role: "Contributor",
-      status: "Poster presented",
+      status: "Poster presented at SSEA",
       summary: "Contributed to the AOCS team during ESA Academy’s Concurrent Engineering Workshop by analysing torques and moments of inertia across mission phases and assessing actuator options for pointing and manoeuvrability.",
       link: "",
       linkLabel: ""
