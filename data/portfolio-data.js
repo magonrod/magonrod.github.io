@@ -433,7 +433,7 @@ window.portfolioData = {
       venue: "i-SAIRAS/iSpaRo 2026",
       date: "November 2026",
       role: "Co-author",
-      status: "PAPER ACCEPTED: iSpaRo 2026",
+      status: "PAPER ACCEPTED AT iSpaRo 2026",
       summary: "Contributed the terrain-generation module, including crater, ejecta and rock-placement modelling, co-registered analysis layers and comparison with lunar-surface literature.",
       link: "",
       linkLabel: ""
